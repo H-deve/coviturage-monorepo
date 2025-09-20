@@ -1,0 +1,85 @@
+stages:
+  # - build
+  # - test
+  # - sonarqube-check
+  # - sonarqube-vulnerability-report
+  # - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  image: node:20.18
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - coverage/lcov.info
+
+test:
+  stage: test
+  image: node:20.18
+  script:
+    - npm ci
+    - npx jest --version
+    - npx jest --config ./test/integration/jest-integration.json --collectCoverage --coverageDirectory="./coverage" --ci --reporters=default --reporters=jest-junit --watchAll=false
+  artifacts:
+    paths:
+      - coverage/lcov.info
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/lcov.info
+
+sonarqube-check:
+  stage: sonarqube-check
+  image: 
+    name: sonarsource/sonar-scanner-cli:5.0
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+    GIT_DEPTH: "0"
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script: 
+    - sonar-scanner
+  allow_failure: true
+  only:
+    - merge_requests
+    - master
+    - main
+    - develop
+
+sonarqube-vulnerability-report:
+  stage: sonarqube-vulnerability-report
+  script:
+    - 'curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=Soutenance4Moatasm&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json'
+  allow_failure: true
+  only:
+    - merge_requests
+    - master
+    - main
+    - develop
+  artifacts:
+    expire_in: 1 day
+    reports:
+      sast: gl-sast-sonar-report.json
+  dependencies:
+    - sonarqube-check
+
+deploy:
+  stage: deploy
+  image: mwienk/docker-git-ftp
+  dependencies:
+    - build
+  only:
+    - main
+  script:
+     - apt-get update -qq && apt-get install -y -qq lftp
+     - lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mkdir -p NestTest; cd NestTest; mirror -Rv ./ --ignore-time --parallel=3 --exclude .git/"

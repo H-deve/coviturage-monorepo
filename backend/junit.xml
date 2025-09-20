@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="23" failures="4" errors="0" time="24.926">
+  <testsuite name="AppModule (integration)" errors="0" failures="4" skipped="0" timestamp="2025-03-10T12:50:21" time="24.635" tests="23">
+    <testcase classname="AppModule (integration) /utilisateur (GET)" name="AppModule (integration) /utilisateur (GET)" time="0.039">
+    </testcase>
+    <testcase classname="AppModule (integration) /utilisateur/:id (GET)" name="AppModule (integration) /utilisateur/:id (GET)" time="0.01">
+    </testcase>
+    <testcase classname="AppModule (integration) /utilisateur (POST)" name="AppModule (integration) /utilisateur (POST)" time="0.042">
+    </testcase>
+    <testcase classname="AppModule (integration) /utilisateur/:id (PATCH)" name="AppModule (integration) /utilisateur/:id (PATCH)" time="0.008">
+    </testcase>
+    <testcase classname="AppModule (integration) /inscription/listePassagersConducteur/:trajetId (GET)" name="AppModule (integration) /inscription/listePassagersConducteur/:trajetId (GET)" time="0.006">
+    </testcase>
+    <testcase classname="AppModule (integration) /inscription/nouvelleInscription/:utilisateurId/:trajetId (POST)" name="AppModule (integration) /inscription/nouvelleInscription/:utilisateurId/:trajetId (POST)" time="0.009">
+    </testcase>
+    <testcase classname="AppModule (integration) /marque (POST)" name="AppModule (integration) /marque (POST)" time="0.013">
+    </testcase>
+    <testcase classname="AppModule (integration) /marque/:nom (POST)" name="AppModule (integration) /marque/:nom (POST)" time="0.01">
+    </testcase>
+    <testcase classname="AppModule (integration) /marque (GET)" name="AppModule (integration) /marque (GET)" time="0.005">
+    </testcase>
+    <testcase classname="AppModule (integration) /marque/:id (GET)" name="AppModule (integration) /marque/:id (GET)" time="0.007">
+    </testcase>
+    <testcase classname="AppModule (integration) /marque/:id (PATCH)" name="AppModule (integration) /marque/:id (PATCH)" time="0.006">
+    </testcase>
+    <testcase classname="AppModule (integration) /trajet/:id (GET)" name="AppModule (integration) /trajet/:id (GET)" time="0.006">
+    </testcase>
+    <testcase classname="AppModule (integration) /trajet (POST)" name="AppModule (integration) /trajet (POST)" time="0.011">
+    </testcase>
+    <testcase classname="AppModule (integration) /trajet/findTrajet/:villeD/:villeA/:dateT (GET)" name="AppModule (integration) /trajet/findTrajet/:villeD/:villeA/:dateT (GET)" time="0.007">
+    </testcase>
+    <testcase classname="AppModule (integration) /trajet/:id (PATCH)" name="AppModule (integration) /trajet/:id (PATCH)" time="0.009">
+    </testcase>
+    <testcase classname="AppModule (integration) /ville/:id (GET)" name="AppModule (integration) /ville/:id (GET)" time="0.006">
+      <failure>Error: expected 200 &quot;OK&quot;, got 401 &quot;Unauthorized&quot;
+    at Object.&lt;anonymous&gt; (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\test\integration\app.integration-spec.ts:266:8)
+    at Promise.then.completed (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-runner\build\runTest.js:444:34)
+----
+    at Test._assertStatus (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:633:28)
+    at Server.emit (node:events:519:28)
+    at emitCloseNT (node:net:2340:8)
+    at processTicksAndRejections (node:internal/process/task_queues:81:21)</failure>
+    </testcase>
+    <testcase classname="AppModule (integration) /voiture (POST)" name="AppModule (integration) /voiture (POST)" time="0.044">
+      <failure>Error: expected 201 &quot;Created&quot;, got 500 &quot;Internal Server Error&quot;
+    at Object.&lt;anonymous&gt; (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\test\integration\app.integration-spec.ts:296:8)
+    at Promise.then.completed (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-runner\build\runTest.js:444:34)
+----
+    at Test._assertStatus (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:252:14)
+    at C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:633:28)
+    at Server.emit (node:events:519:28)
+    at emitCloseNT (node:net:2340:8)
+    at processTicksAndRejections (node:internal/process/task_queues:81:21)</failure>
+    </testcase>
+    <testcase classname="AppModule (integration) /voiture (GET)" name="AppModule (integration) /voiture (GET)" time="0.006">
+    </testcase>
+    <testcase classname="AppModule (integration) /voiture/:id (GET)" name="AppModule (integration) /voiture/:id (GET)" time="0.004">
+    </testcase>
+    <testcase classname="AppModule (integration) /voiture/:id (PATCH)" name="AppModule (integration) /voiture/:id (PATCH)" time="0.006">
+    </testcase>
+    <testcase classname="AppModule (integration) /auth/register (POST)" name="AppModule (integration) /auth/register (POST)" time="0.091">
+    </testcase>
+    <testcase classname="AppModule (integration) /auth/login (POST)" name="AppModule (integration) /auth/login (POST)" time="0.142">
+      <failure>Error: expect(received).toHaveProperty(path)
+
+Expected path: &quot;access_token&quot;
+Received path: []
+
+Received value: {&quot;accessToken&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwic3ViIjo5LCJpYXQiOjE3NDE2MTEwMzMsImV4cCI6MTc0MTYxMTkzM30.j1KvwadcEF4ga52JOUKfEs8r7vvFejYwhgIRkRYw4fo&quot;, &quot;refreshToken&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwic3ViIjo5LCJpYXQiOjE3NDE2MTEwMzMsImV4cCI6MTc0MjIxNTgzM30.iv9JSHoBim7mCCAam3aIzJuCeq5iWlTeUcYZtEyTgSQ&quot;}
+    at Object.&lt;anonymous&gt; (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\test\integration\app.integration-spec.ts:388:8)
+    at Promise.then.completed (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\jest-runner\build\runTest.js:444:34)
+----
+    at C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\test\integration\app.integration-spec.ts:389:26
+    at C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:308:13
+    at Test._assertFunction (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:164:23)
+    at Server.localAssert (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\node_modules\supertest\lib\test.js:120:14)
+    at Object.onceWrapper (node:events:633:28)
+    at Server.emit (node:events:519:28)
+    at emitCloseNT (node:net:2340:8)
+    at processTicksAndRejections (node:internal/process/task_queues:81:21)</failure>
+    </testcase>
+    <testcase classname="AppModule (integration) doit envoyer des courriels à toutes les inscriptions d un trajet spécifique" name="AppModule (integration) doit envoyer des courriels à toutes les inscriptions d un trajet spécifique" time="12.872">
+      <failure>Error: expect(jest.fn()).toHaveBeenCalledTimes(expected)
+
+Expected number of calls: 2
+Received number of calls: 0
+    at Object.&lt;anonymous&gt; (C:\Users\CDAX32\Desktop\cours CDA\soutenance4 - gitLap\Projet\soutencane4\backend\test\integration\app.integration-spec.ts:413:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
