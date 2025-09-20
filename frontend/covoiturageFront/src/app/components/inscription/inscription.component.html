@@ -1,0 +1,117 @@
+<main class="main">
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>Inscription</h2>
+      <form class="auth-form" (ngSubmit)="onRegister()">
+        <!-- Personal Information -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom*</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" 
+                   [(ngModel)]="utilisateur.nom" required>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom*</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" 
+                   [(ngModel)]="utilisateur.prenom" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" placeholder="exemple@email.com" 
+                 [(ngModel)]="utilisateur.email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe*</label>
+          <div class="password-container">
+            <input [type]="showPassword ? 'text' : 'password'" id="password" name="password" 
+                   placeholder="Créez un mot de passe" [(ngModel)]="utilisateur.password" 
+                   (input)="checkPasswordStrength()" required>
+            <button type="button" class="toggle-password" (click)="togglePasswordVisibility()">
+              {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+            </button>
+          </div>
+          <div class="password-strength" [class]="passwordStrength">
+            <span *ngIf="utilisateur.password">
+              Force du mot de passe: 
+              <span [class]="passwordStrength">{{ 
+                passwordStrength === 'strong' ? 'Forte' : 
+                passwordStrength === 'medium' ? 'Moyenne' : 'Faible' 
+              }}</span>
+            </span>
+          </div>
+          <small class="hint">Minimum 8 caractères avec majuscule, minuscule et chiffre</small>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tel">Téléphone*</label>
+            <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78" 
+                   [(ngModel)]="utilisateur.tel" required>
+          </div>
+          <div class="form-group">
+            <label for="ville">Ville*</label>
+            <input type="text" id="ville" name="ville" placeholder="Votre ville" 
+                   [(ngModel)]="utilisateur.ville" required>
+          </div>
+        </div>
+
+        <!-- Car Information -->
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" [(ngModel)]="hasCar" name="hasCar" 
+                   (change)="onHasCarChange()">
+            <span>Je possède une voiture</span>
+          </label>
+        </div>
+
+        <div *ngIf="hasCar && utilisateur.voiture" class="car-details">
+          <h3>Informations sur la voiture</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="place">Nombre de places*</label>
+              <input type="number" id="place" name="place" min="1" max="8" 
+                     [(ngModel)]="utilisateur.voiture.place" required>
+            </div>
+            <div class="form-group">
+              <label for="marque">Marque*</label>
+              <input type="text" id="marque" name="marque" placeholder="Marque" 
+                     [(ngModel)]="utilisateur.voiture.marque" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="modele">Modèle*</label>
+            <input type="text" id="modele" name="modele" placeholder="Modèle" 
+                   [(ngModel)]="utilisateur.voiture.modele" required>
+          </div>
+          <div class="form-group">
+            <label for="immatriculation">Immatriculation*</label>
+            <input type="text" id="immatriculation" name="immatriculation" 
+                   placeholder="AA-123-BB" [(ngModel)]="utilisateur.voiture.immatriculation" required>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div *ngIf="errorMessage" class="alert error">
+          <span class="icon">!</span> {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert success">
+          <span class="icon">✓</span> {{ successMessage }}
+        </div>
+
+        <button type="submit" class="auth-button" [disabled]="isLoading">
+          <span *ngIf="!isLoading">S'inscrire</span>
+          <span *ngIf="isLoading" class="loading">
+            <span class="spinner"></span> Inscription en cours...
+          </span>
+        </button>
+      </form>
+
+      <div class="auth-footer">
+          <p>Déjà inscrit ? <a routerLink="/connexion" routerLinkActive="active">Se connecter</a></p>
+      </div>
+    </div>
+  </div>
+</main>

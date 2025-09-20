@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <h2>Publier un trajet</h2>
+  <form [formGroup]="publierTrajetForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="villeD" class="form-label">Ville de départ</label>
+      <input type="text" id="villeD" class="form-control" formControlName="villeD" />
+    </div>
+    <div class="mb-3">
+      <label for="villeA" class="form-label">Ville d'arrivée</label>
+      <input type="text" id="villeA" class="form-control" formControlName="villeA" />
+    </div>
+    <div class="mb-3">
+      <label for="dateT" class="form-label">Date et heure de départ</label>
+      <input type="datetime-local" id="dateT" class="form-control" formControlName="dateT" />
+    </div>
+    <div class="mb-3">
+      <label for="nplace" class="form-label">Nombre de places</label>
+      <input type="number" id="nplace" class="form-control" formControlName="nplace" />
+    </div>
+    <div class="mb-3">
+      <label for="kms" class="form-label">Kilomètres</label>
+      <input type="number" id="kms" class="form-control" formControlName="kms" />
+    </div>
+    <div class="mb-3">
+      <label for="prix" class="form-label">Prix (€)</label>
+      <input type="number" id="prix" class="form-control" formControlName="prix" />
+    </div>
+    <div class="mb-3">
+      <label for="dureeDeTrajet" class="form-label">Durée de trajet</label>
+      <input type="text" id="dureeDeTrajet" class="form-control" formControlName="dureeDeTrajet" />
+    </div>
+    <button type="submit" class="btn btn-primary">Publier</button>
+  </form>
+</div>

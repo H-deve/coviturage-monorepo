@@ -1,0 +1,228 @@
+
+
+<!-- Search Form -->
+
+
+<form role="search" class="container mt-4" (ngSubmit)="onSearch()">
+  <div class="row g-3 align-items-center">
+    <!-- Departure Input -->
+    <div class="col-md-3">
+      <div class="input-group">
+        <span class="input-group-text">🚗</span>
+        <input
+          type="text"
+          class="form-control"
+          id="departure"
+          placeholder="Départ"
+          autocomplete="off"
+          [(ngModel)]="villeD"
+          name="villeD"
+        />
+      </div>
+      <div id="departureSuggestions" class="suggestions-container"></div>
+    </div>
+
+    <!-- Destination Input -->
+    <div class="col-md-3">
+      <div class="input-group">
+        <span class="input-group-text">📍</span>
+        <input
+          type="text"
+          class="form-control"
+          id="destination"
+          placeholder="Destination"
+          autocomplete="off"
+          [(ngModel)]="villeA"
+          name="villeA"
+        />
+      </div>
+      <div id="destinationSuggestions" class="suggestions-container"></div>
+    </div>
+
+    <!-- Date Picker -->
+    <div class="col-md-2">
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="fa-solid fa-calendar-days"></i>
+        </span>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="dateT"
+          name="dateT"
+        />
+      </div>
+    </div>
+
+    <!-- Passenger Picker -->
+    <div class="col-md-2">
+      <div class="input-group">
+        <button class="btn btn-outline-secondary" type="button" (click)="decrementPassagers()">−</button>
+        <span class="input-group-text">
+          <i class="fa-solid fa-user"></i>
+        </span>
+        <input
+          type="number"
+          class="form-control text-center"
+          [(ngModel)]="passagers"
+          name="passagers"
+          min="1"
+          max="10"
+        />
+        <button class="btn btn-outline-secondary" type="button" (click)="incrementPassagers()">+</button>
+      </div>
+    </div>
+
+    <!-- Search Button -->
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Rechercher</button>
+    </div>
+  </div>
+</form>
+
+<!-- Main Content -->
+<main class="container mt-4">
+  <!-- Slider Section -->
+  <section id="home">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/slide1.jpg" class="d-block w-100" alt="Slide 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Partagez vos trajets</h5>
+            <p>Économisez et voyagez en toute convivialité.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/slide2.jpg" class="d-block w-100" alt="Slide 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Trajets disponibles</h5>
+            <p>Trouvez des trajets près de chez vous.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/slide3.jpg" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Voyagez écologique</h5>
+            <p>Réduisez votre empreinte carbone.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <h2>Comment ça marche</h2>
+    <div class="steps">
+      <div class="step">
+        <i class="fas fa-search"></i>
+        <h3>1. Recherchez un trajet</h3>
+        <p>Entrez votre départ, destination et date.</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-calendar-check"></i>
+        <h3>2. Réservez</h3>
+        <p>Choisissez un trajet et réservez votre place.</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-car"></i>
+        <h3>3. Voyagez</h3>
+        <p>Profitez du voyage et économisez.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Ce que disent nos utilisateurs</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Un service incroyable ! J'ai économisé beaucoup d'argent et rencontré des gens sympas."</p>
+            <div class="testimonial-author">
+              <img src="images/feedback/user1.png" alt="User 1" />
+              <span>Jean Dupont</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Facile à utiliser et très fiable. Je recommande vivement !"</p>
+            <div class="testimonial-author">
+              <img src="images/feedback/user2.png" alt="User 2" />
+              <span>Marie Curie</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Voyager n'a jamais été aussi simple et économique. Merci !"</p>
+            <div class="testimonial-author">
+              <img src="images/feedback/user3.png" alt="User 3" />
+              <span>Pierre Durand</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Call-to-Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Prêt à voyager ?</h2>
+      <p>Trouvez votre trajet dès maintenant et commencez à économiser.</p>
+      <a href="#" class="cta-button">Rechercher un trajet</a>
+    </div>
+  </section>
+
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2>Pourquoi choisir Covoiturage ?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-coins"></i>
+          <h3>Économique</h3>
+          <p>Partagez les frais de voyage et économisez jusqu'à 50%.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Écologique</h3>
+          <p>Réduisez votre empreinte carbone en voyageant ensemble.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-users"></i>
+          <h3>Communautaire</h3>
+          <p>Rencontrez des voyageurs sympas et partagez des moments uniques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

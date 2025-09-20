@@ -1,0 +1,60 @@
+<div class="profile-container" *ngIf="userProfile">
+  <h2>Profil de {{ userProfile.nom }} {{ userProfile.prenom }}</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nom">Nom:</label>
+      <input id="nom" formControlName="nom" />
+    </div>
+    <div>
+      <label for="prenom">Prénom:</label>
+      <input id="prenom" formControlName="prenom" />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" />
+    </div>
+    <div>
+      <label for="tel">Téléphone:</label>
+      <input id="tel" formControlName="tel" />
+    </div>
+    <div>
+      <label for="ville">Ville:</label>
+      <input id="ville" formControlName="ville" />
+    </div>
+    <div>
+      <label for="profilImage">Image de profil:</label>
+      <input id="profilImage" formControlName="profilImage" />
+    </div>
+    <div>
+      <label for="dateNaissance">Date de naissance:</label>
+      <input id="dateNaissance" formControlName="dateNaissance" type="date" />
+    </div>
+    <div>
+      <label for="adresse">Adresse:</label>
+      <input id="adresse" formControlName="adresse" />
+    </div>
+    <div formGroupName="voiture">
+      <h3>Voiture</h3>
+      <div>
+        <label for="place">Nombre de places:</label>
+        <input id="place" formControlName="place" type="number" />
+      </div>
+      <div>
+        <label for="marque">Marque:</label>
+        <input id="marque" formControlName="marque" />
+      </div>
+      <div>
+        <label for="modele">Modèle:</label>
+        <input id="modele" formControlName="modele" />
+      </div>
+      <div>
+        <label for="immatriculation">Immatriculation:</label>
+        <input id="immatriculation" formControlName="immatriculation" />
+      </div>
+    </div>
+    <button type="submit">Mettre à jour</button>
+  </form>
+</div>
+<div *ngIf="!userProfile">
+  <p>Chargement du profil...</p>
+</div>

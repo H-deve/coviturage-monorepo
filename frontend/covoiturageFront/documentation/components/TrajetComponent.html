@@ -1,0 +1,1660 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>covoiturage-front2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">covoiturage-front2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TrajetComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/trajet/trajet.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-trajet</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>FormsModule</code>
+                            <code>CommonModule</code>
+                            <code>TimePipe</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./trajet.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./trajet.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#carType" >carType</a>
+                            </li>
+                            <li>
+                                <a href="#dateT" >dateT</a>
+                            </li>
+                            <li>
+                                <a href="#departTime" >departTime</a>
+                            </li>
+                            <li>
+                                <a href="#map" >map</a>
+                            </li>
+                            <li>
+                                <a href="#maxPrice" >maxPrice</a>
+                            </li>
+                            <li>
+                                <a href="#originalTrajets" >originalTrajets</a>
+                            </li>
+                            <li>
+                                <a href="#passagers" >passagers</a>
+                            </li>
+                            <li>
+                                <a href="#trajets" >trajets</a>
+                            </li>
+                            <li>
+                                <a href="#villeA" >villeA</a>
+                            </li>
+                            <li>
+                                <a href="#villeD" >villeD</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calculateAvailablePlaces" >calculateAvailablePlaces</a>
+                            </li>
+                            <li>
+                                <a href="#fetchAllTrajets" >fetchAllTrajets</a>
+                            </li>
+                            <li>
+                                <a href="#fetchTrajets" >fetchTrajets</a>
+                            </li>
+                            <li>
+                                <a href="#filterResults" >filterResults</a>
+                            </li>
+                            <li>
+                                <a href="#getCityIdByName" >getCityIdByName</a>
+                            </li>
+                            <li>
+                                <a href="#isTimeInRange" >isTimeInRange</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#reserver" >reserver</a>
+                            </li>
+                            <li>
+                                <a href="#showMap" >showMap</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, trajetService: <a href="../injectables/TrajetService.html" target="_self">TrajetService</a>, platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/trajet/trajet.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p> Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>trajetService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TrajetService.html" target="_self" >TrajetService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>platformId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateAvailablePlaces"></a>
+                    <span class="name">
+                        <span ><b>calculateAvailablePlaces</b></span>
+                        <a href="#calculateAvailablePlaces"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculateAvailablePlaces()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="148"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:148</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fonction permettant de filtrer les résultats</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchAllTrajets"></a>
+                    <span class="name">
+                        <span ><b>fetchAllTrajets</b></span>
+                        <a href="#fetchAllTrajets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchAllTrajets()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fonction permettant de récupérer tous les trajets</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchTrajets"></a>
+                    <span class="name">
+                        <span ><b>fetchTrajets</b></span>
+                        <a href="#fetchTrajets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchTrajets()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fonction permettant de rechercher un trajet</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterResults"></a>
+                    <span class="name">
+                        <span ><b>filterResults</b></span>
+                        <a href="#filterResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterResults()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fonction permettant de filtrer les résultats</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCityIdByName"></a>
+                    <span class="name">
+                        <span ><b>getCityIdByName</b></span>
+                        <a href="#getCityIdByName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCityIdByName(cityName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p> cette fonction permet de récupérer l&#39;ID d&#39;une ville par son nom</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cityName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTimeInRange"></a>
+                    <span class="name">
+                        <span ><b>isTimeInRange</b></span>
+                        <a href="#isTimeInRange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isTimeInRange(trajetTime: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, filterTime: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p> Fonction permettant de valider une adresse email</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trajetTime</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>filterTime</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>ngOnInit
+cette fonction permet de récupérer les paramètres de recherche à partir de l&#39;URL
+et de récupérer les trajets en fonction des paramètres de recherche ou de récupérer tous les trajets s&#39;il n&#39;y a pas de paramètres de recherche</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reserver"></a>
+                    <span class="name">
+                        <span ><b>reserver</b></span>
+                        <a href="#reserver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reserver(trajetId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="188"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:188</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p> cette fonction permet de réserver un trajet</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trajetId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showMap"></a>
+                    <span class="name">
+                        <span ><b>showMap</b></span>
+                        <a href="#showMap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showMap(trajet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/components/trajet/trajet.component.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>trajet</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carType"></a>
+                    <span class="name">
+                        <span ><b>carType</b></span>
+                        <a href="#carType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/trajet/trajet.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateT"></a>
+                    <span class="name">
+                        <span ><b>dateT</b></span>
+                        <a href="#dateT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/trajet/trajet.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="departTime"></a>
+                    <span class="name">
+                        <span ><b>departTime</b></span>
+                        <a href="#departTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/trajet/trajet.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="map"></a>
+                    <span class="name">
+                        <span ><b>map</b></span>
+                        <a href="#map"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>L.Map | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/trajet/trajet.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maxPrice"></a>
+                    <span class="name">
+                        <span ><b>maxPrice</b></span>
+                        <a href="#maxPrice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>100</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/trajet/trajet.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="originalTrajets"></a>
+                    <span class="name">
+                        <span ><b>originalTrajets</b></span>
+                        <a href="#originalTrajets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/trajet/trajet.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passagers"></a>
+                    <span class="name">
+                        <span ><b>passagers</b></span>
+                        <a href="#passagers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/trajet/trajet.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trajets"></a>
+                    <span class="name">
+                        <span ><b>trajets</b></span>
+                        <a href="#trajets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/trajet/trajet.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="villeA"></a>
+                    <span class="name">
+                        <span ><b>villeA</b></span>
+                        <a href="#villeA"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/trajet/trajet.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="villeD"></a>
+                    <span class="name">
+                        <span ><b>villeD</b></span>
+                        <a href="#villeD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/trajet/trajet.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule, isPlatformBrowser } from &#x27;@angular/common&#x27;;
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from &#x27;@angular/core&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { TrajetService } from &#x27;../../services/trajet/trajet.service&#x27;;
+import { TimePipe } from &#x27;../../pipe/time.pipe&#x27;;
+import { Observable, forkJoin } from &#x27;rxjs&#x27;;
+import L from &#x27;leaflet&#x27;;
+
+@Component({
+  selector: &#x27;app-trajet&#x27;,
+  standalone: true,
+  imports: [FormsModule, CommonModule, TimePipe],
+  templateUrl: &#x27;./trajet.component.html&#x27;,
+  styleUrls: [&#x27;./trajet.component.css&#x27;],
+})
+
+/**
+ * Trajet component
+ * ce Class permet de gérer les trajets
+ * 
+ */
+export class TrajetComponent implements OnInit {
+  villeD: string &#x3D; &#x27;&#x27;;
+  villeA: string &#x3D; &#x27;&#x27;;
+  dateT: string &#x3D; &#x27;&#x27;;
+  passagers: number &#x3D; 1;
+  trajets: any[] &#x3D; [];
+  originalTrajets: any[] &#x3D; []; // Store the original list of trajets for filtering
+  maxPrice: number &#x3D; 100;
+  departTime: string &#x3D; &#x27;&#x27;;
+  carType: string &#x3D; &#x27;&#x27;;
+  map: L.Map | undefined;
+
+
+  /**
+   *  Constructor
+   * @param route 
+   * @param trajetService 
+   * @param platformId 
+   */
+  constructor(
+    private route: ActivatedRoute,
+    private trajetService: TrajetService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
+
+  /**
+   * ngOnInit
+   * cette fonction permet de récupérer les paramètres de recherche à partir de l&#x27;URL
+   * et de récupérer les trajets en fonction des paramètres de recherche ou de récupérer tous les trajets s&#x27;il n&#x27;y a pas de paramètres de recherche
+   *  
+   */
+  ngOnInit(): void {
+    // Get search parameters from the URL
+    this.route.queryParams.subscribe((params) &#x3D;&gt; {
+      this.villeD &#x3D; params[&#x27;villeD&#x27;] || &#x27;&#x27;;
+      this.villeA &#x3D; params[&#x27;villeA&#x27;] || &#x27;&#x27;;
+      this.dateT &#x3D; params[&#x27;dateT&#x27;] || &#x27;&#x27;;
+      this.passagers &#x3D; +params[&#x27;passagers&#x27;] || 1;
+
+      // Fetch basé sur les paramètres de recherche
+      if (this.villeD &amp;&amp; this.villeA &amp;&amp; this.dateT) {
+        this.fetchTrajets();
+      } else {
+        this.fetchAllTrajets();
+      }
+    });
+  }
+
+  /**
+   * Fonction permettant de rechercher un trajet
+   * @returns void
+   */
+
+  fetchTrajets() {
+    if (!this.villeD || !this.villeA) {
+      console.error(&#x27;City names are not defined&#x27;);
+      return;
+    }
+
+    /**
+     * Fetch city IDs by name
+     * @returns Observable&lt;any&gt;
+     */
+    forkJoin({
+      villeDData: this.getCityIdByName(this.villeD),
+      villeAData: this.getCityIdByName(this.villeA)
+    }).subscribe({
+      next: ({ villeDData, villeAData }) &#x3D;&gt; {
+        if (!villeDData || !villeAData) {
+          console.error(&#x27;City data is not defined&#x27;);
+          return;
+        }
+
+        const villeDId &#x3D; villeDData.id;
+        const villeAId &#x3D; villeAData.id;
+        this.trajetService.findTrajetWithDetails(villeDId, villeAId, this.dateT).subscribe({
+          next: (data) &#x3D;&gt; {
+            this.trajets &#x3D; data;
+            this.originalTrajets &#x3D; [...data]; // Store the original data for filtering
+            this.calculateAvailablePlaces();
+          },
+          error: (err) &#x3D;&gt; {
+            console.error(&#x27;Error fetching trajets:&#x27;, err);
+          },
+        });
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error fetching city IDs:&#x27;, err);
+      }
+    });
+  }
+
+  /**
+   * Fonction permettant de récupérer tous les trajets
+   * @returns void
+   * 
+   */
+  fetchAllTrajets() {
+    this.trajetService.findAllTrajetsWithDetails().subscribe({
+      next: (data) &#x3D;&gt; {
+        this.trajets &#x3D; data;
+        this.originalTrajets &#x3D; [...data]; // Store the original data for filtering
+        this.calculateAvailablePlaces();
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error fetching trajets:&#x27;, err);
+      },
+    });
+  }
+
+
+  /**
+   *  cette fonction permet de récupérer l&#x27;ID d&#x27;une ville par son nom
+   * @param cityName 
+   * @returns 
+   */
+  getCityIdByName(cityName: string): Observable&lt;any&gt; {
+    return this.trajetService.getCityIdByName(cityName);
+  }
+
+  /**
+   * Fonction permettant de filtrer les résultats
+   * @returns void
+   * 
+   */
+  calculateAvailablePlaces() {
+    this.trajets.forEach((trajet) &#x3D;&gt; {
+      trajet.availablePlaces &#x3D; trajet.nplace - trajet.inscriptions.length;
+    });
+  }
+
+
+  /**
+   * Fonction permettant de filtrer les résultats
+   *
+   * 
+   */
+  filterResults() {
+    this.trajets &#x3D; this.originalTrajets.filter((trajet) &#x3D;&gt; {
+      const matchesPrice &#x3D; trajet.prix &lt;&#x3D; this.maxPrice;
+      const matchesDepartTime &#x3D; !this.departTime || this.isTimeInRange(trajet.dateT, this.departTime);
+      return matchesPrice &amp;&amp; matchesDepartTime;
+    });
+  }
+
+  /**
+   *  Fonction permettant de valider une adresse email
+   * @param trajetTime
+   * @param trajetTime 
+   * @param filterTime 
+   * @returns 
+   */
+
+  isTimeInRange(trajetTime: string, filterTime: string): boolean {
+    const trajetDate &#x3D; new Date(trajetTime);
+    const filterDate &#x3D; new Date(trajetDate.toDateString() + &#x27; &#x27; + filterTime);
+    return trajetDate.getTime() &gt;&#x3D; filterDate.getTime();
+  }
+
+  /**
+   *  cette fonction permet de réserver un trajet
+   *  
+   * @param trajetId 
+   * @returns 
+   */
+  reserver(trajetId: number) {
+    const userId &#x3D; localStorage.getItem(&#x27;userId&#x27;); // Get the logged-in user&#x27;s ID
+    if (!userId) {
+      alert(&#x27;Veuillez vous connecter pour réserver un trajet.&#x27;);
+      return;
+    }
+
+    // appel de la fonction reserverTrajet du service trajetService pour réserver un trajet
+    // 
+    this.trajetService.reserverTrajet(+userId, trajetId).subscribe({
+      next: () &#x3D;&gt; {
+        alert(&#x27;Réservation réussie !&#x27;);
+        this.fetchAllTrajets(); // Refresh the list of trajets after reservation
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error reserving trajet:&#x27;, err);
+        alert(&#x27;Erreur lors de la réservation.&#x27;);
+      },
+    });
+  }
+
+  showMap(trajet: any): void {
+    // Destroy the map if it already exists
+    if (this.map) {
+      this.map.remove();
+    }
+  
+    // Check if the coordinates are valid
+    if (!trajet || !trajet.villeD || !trajet.villeA || !trajet.villeD.lat || !trajet.villeD.lng || !trajet.villeA.lat || !trajet.villeA.lng) {
+      console.warn(&#x27;Invalid or missing trajet data. Showing default map view.&#x27;);
+      this.map &#x3D; L.map(&#x27;map&#x27;).setView([48.8566, 2.3522], 6); // Default to Paris
+      L.tileLayer(&#x27;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#x27;, {
+        attribution: &#x27;&amp;copy; OpenStreetMap contributors&#x27;,
+      }).addTo(this.map);
+      return;
+    }
+  
+    // Initialize the map with the departure location
+    this.map &#x3D; L.map(&#x27;map&#x27;).setView([trajet.villeD.lat, trajet.villeD.lng], 10);
+  
+    // Add OpenStreetMap tiles
+    L.tileLayer(&#x27;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#x27;, {
+      attribution: &#x27;&amp;copy; OpenStreetMap contributors&#x27;,
+    }).addTo(this.map);
+  
+    // Add markers for departure and arrival points
+    const markerD &#x3D; L.marker([trajet.villeD.lat, trajet.villeD.lng]).addTo(this.map);
+    markerD.bindPopup(&#x60;&lt;b&gt;Départ:&lt;/b&gt; ${trajet.villeD.nom}&#x60;).openPopup();
+  
+    const markerA &#x3D; L.marker([trajet.villeA.lat, trajet.villeA.lng]).addTo(this.map);
+    markerA.bindPopup(&#x60;&lt;b&gt;Arrivée:&lt;/b&gt; ${trajet.villeA.nom}&#x60;);
+  
+    // Draw a polyline between the two points
+    const latlngs &#x3D; [
+      [trajet.villeD.lat, trajet.villeD.lng],
+      [trajet.villeA.lat, trajet.villeA.lng],
+    ];
+    L.polyline(latlngs, { color: &#x27;blue&#x27; }).addTo(this.map);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+    &lt;!-- Map Container --&gt;
+    &lt;div id&#x3D;&quot;map&quot; style&#x3D;&quot;height: 400px; margin-top: 20px;&quot; *ngIf&#x3D;&quot;map&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+  &lt;!-- Filter Section --&gt;
+  &lt;div class&#x3D;&quot;filter-section bg-white p-3 mt-4 rounded shadow-sm&quot;&gt;
+    &lt;h4 class&#x3D;&quot;mb-3&quot;&gt;Filtrer les résultats&lt;/h4&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;!-- Max Price --&gt;
+      &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+        &lt;label for&#x3D;&quot;priceRange&quot; class&#x3D;&quot;form-label&quot;&gt;Prix maximum (€)&lt;/label&gt;
+        &lt;input
+          type&#x3D;&quot;range&quot;
+          id&#x3D;&quot;priceRange&quot;
+          class&#x3D;&quot;form-range&quot;
+          min&#x3D;&quot;0&quot;
+          max&#x3D;&quot;100&quot;
+          [(ngModel)]&#x3D;&quot;maxPrice&quot;
+          (input)&#x3D;&quot;filterResults()&quot;
+        /&gt;
+        &lt;span class&#x3D;&quot;fw-bold&quot;&gt;{{ maxPrice }} €&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Departure Time --&gt;
+      &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+        &lt;label for&#x3D;&quot;departTime&quot; class&#x3D;&quot;form-label&quot;&gt;Heure de départ&lt;/label&gt;
+        &lt;input
+          type&#x3D;&quot;time&quot;
+          id&#x3D;&quot;departTime&quot;
+          class&#x3D;&quot;form-control&quot;
+          [(ngModel)]&#x3D;&quot;departTime&quot;
+          (change)&#x3D;&quot;filterResults()&quot;
+        /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Ride Cards --&gt;
+  &lt;div *ngIf&#x3D;&quot;trajets.length &gt; 0; else noResults&quot; class&#x3D;&quot;mt-4&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-6&quot; *ngFor&#x3D;&quot;let trajet of trajets&quot;&gt;
+        &lt;div class&#x3D;&quot;card shadow-sm mb-4&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;row align-items-center&quot;&gt;
+              &lt;!-- Driver Info --&gt;
+              &lt;div class&#x3D;&quot;col-md-4 text-center&quot;&gt;
+                &lt;h5 class&#x3D;&quot;driver-name fw-bold&quot;&gt;
+                  {{ trajet.utilisateur?.nom }} {{ trajet.utilisateur?.prenom }}
+                &lt;/h5&gt;
+                &lt;div class&#x3D;&quot;text-muted&quot;&gt;
+                  &lt;i class&#x3D;&quot;fas fa-star text-warning&quot;&gt;&lt;/i&gt; 4.8 (120 avis)
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;mt-2&quot;&gt;
+                  &lt;i class&#x3D;&quot;fas fa-car&quot;&gt;&lt;/i&gt;
+                  {{ trajet.utilisateur?.voiture?.modele }} 
+                  ({{ trajet.utilisateur?.voiture?.marque?.nom }})
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;!-- Ride Details --&gt;
+              &lt;div class&#x3D;&quot;col-md-5&quot;&gt;
+                &lt;h5 class&#x3D;&quot;card-title&quot;&gt;
+                  &lt;i class&#x3D;&quot;fas fa-map-marker-alt text-danger&quot;&gt;&lt;/i&gt; 
+                  {{ trajet.villeD.nom }} → {{ trajet.villeA.nom }}
+                &lt;/h5&gt;
+                &lt;p class&#x3D;&quot;card-text&quot;&gt;
+                  &lt;i class&#x3D;&quot;fas fa-calendar-alt text-primary&quot;&gt;&lt;/i&gt; 
+                  {{ trajet.dateT | date:&#x27;shortDate&#x27; }} &lt;br /&gt;
+                  &lt;i class&#x3D;&quot;fas fa-clock text-success&quot;&gt;&lt;/i&gt; 
+                  Départ {{ trajet.dateT | date:&#x27;shortTime&#x27; }} &lt;br /&gt;
+                  &lt;i class&#x3D;&quot;fas fa-users text-info&quot;&gt;&lt;/i&gt; 
+                  {{ trajet.availablePlaces }} places restantes &lt;br /&gt;
+                  &lt;i class&#x3D;&quot;fas fa-user-check&quot;&gt;&lt;/i&gt; Inscriptions: 
+                  {{ trajet.inscriptions.length }}
+                &lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;!-- Price and Booking --&gt;
+              &lt;div class&#x3D;&quot;col-md-3 text-end&quot;&gt;
+                &lt;h4 class&#x3D;&quot;price text-success fw-bold&quot;&gt;{{ trajet.prix }} €&lt;/h4&gt;
+                &lt;button class&#x3D;&quot;btn btn-primary w-100&quot; (click)&#x3D;&quot;reserver(trajet.id)&quot;&gt;
+                  Réserver &lt;i class&#x3D;&quot;fas fa-arrow-right&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;!-- No Results --&gt;
+  &lt;ng-template #noResults&gt;
+    &lt;div class&#x3D;&quot;alert alert-warning text-center mt-4&quot;&gt;
+      &lt;i class&#x3D;&quot;fas fa-exclamation-circle&quot;&gt;&lt;/i&gt; Aucun trajet disponible pour votre recherche.
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./trajet.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>    <!-- Map Container -->    <div id="map" style="height: 400px; margin-top: 20px;" *ngIf="map"></div><div class="container mt-4">  <!-- Filter Section -->  <div class="filter-section bg-white p-3 mt-4 rounded shadow-sm">    <h4 class="mb-3">Filtrer les résultats</h4>    <div class="row">      <!-- Max Price -->      <div class="col-md-3">        <label for="priceRange" class="form-label">Prix maximum (€)</label>        <input          type="range"          id="priceRange"          class="form-range"          min="0"          max="100"          [(ngModel)]="maxPrice"          (input)="filterResults()"        />        <span class="fw-bold">{{ maxPrice }} €</span>      </div>      <!-- Departure Time -->      <div class="col-md-3">        <label for="departTime" class="form-label">Heure de départ</label>        <input          type="time"          id="departTime"          class="form-control"          [(ngModel)]="departTime"          (change)="filterResults()"        />      </div>    </div>  </div>  <!-- Ride Cards -->  <div *ngIf="trajets.length > 0; else noResults" class="mt-4">    <div class="row">      <div class="col-md-6" *ngFor="let trajet of trajets">        <div class="card shadow-sm mb-4">          <div class="card-body">            <div class="row align-items-center">              <!-- Driver Info -->              <div class="col-md-4 text-center">                <h5 class="driver-name fw-bold">                  {{ trajet.utilisateur?.nom }} {{ trajet.utilisateur?.prenom }}                </h5>                <div class="text-muted">                  <i class="fas fa-star text-warning"></i> 4.8 (120 avis)                </div>                <div class="mt-2">                  <i class="fas fa-car"></i>                  {{ trajet.utilisateur?.voiture?.modele }}                   ({{ trajet.utilisateur?.voiture?.marque?.nom }})                </div>              </div>              <!-- Ride Details -->              <div class="col-md-5">                <h5 class="card-title">                  <i class="fas fa-map-marker-alt text-danger"></i>                   {{ trajet.villeD.nom }} → {{ trajet.villeA.nom }}                </h5>                <p class="card-text">                  <i class="fas fa-calendar-alt text-primary"></i>                   {{ trajet.dateT | date:\'shortDate\' }} <br />                  <i class="fas fa-clock text-success"></i>                   Départ {{ trajet.dateT | date:\'shortTime\' }} <br />                  <i class="fas fa-users text-info"></i>                   {{ trajet.availablePlaces }} places restantes <br />                  <i class="fas fa-user-check"></i> Inscriptions:                   {{ trajet.inscriptions.length }}                </p>              </div>              <!-- Price and Booking -->              <div class="col-md-3 text-end">                <h4 class="price text-success fw-bold">{{ trajet.prix }} €</h4>                <button class="btn btn-primary w-100" (click)="reserver(trajet.id)">                  Réserver <i class="fas fa-arrow-right"></i>                </button>              </div>            </div>          </div>        </div>      </div>    </div>  </div>  <!-- No Results -->  <ng-template #noResults>    <div class="alert alert-warning text-center mt-4">      <i class="fas fa-exclamation-circle"></i> Aucun trajet disponible pour votre recherche.    </div>  </ng-template></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConnexionComponent', 'selector': 'app-connexion'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InscriptionComponent', 'selector': 'app-inscription'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'PublierTrajetComponent', 'selector': 'app-publier-trajet'},{'name': 'TrajetComponent', 'selector': 'app-trajet'},{'name': 'UtilisateurFormComponent', 'selector': 'app-utilisateur-form'},{'name': 'UtilisateurListComponent', 'selector': 'app-utilisateur-list'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TrajetComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrajetComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

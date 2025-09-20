@@ -1,0 +1,902 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>covoiturage-front2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">covoiturage-front2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ConnexionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/connexion/connexion.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-connexion</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterLink</code>
+                            <code>RouterOutlet</code>
+                            <code>RouterLinkActive</code>
+                            <code>FormsModule</code>
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./connexion.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./connexion.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#email" >email</a>
+                            </li>
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#password" >password</a>
+                            </li>
+                            <li>
+                                <a href="#successMessage" >successMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearError" >clearError</a>
+                            </li>
+                            <li>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validateEmail" >validateEmail</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/connexion/connexion.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearError"></a>
+                    <span class="name">
+                        <span ><b>clearError</b></span>
+                        <a href="#clearError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearError()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/components/connexion/connexion.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>login()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/components/connexion/connexion.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>validateEmail</b></span>
+                        <a href="#validateEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/components/connexion/connexion.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="email"></a>
+                    <span class="name">
+                        <span ><b>email</b></span>
+                        <a href="#email"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/connexion/connexion.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/connexion/connexion.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/connexion/connexion.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="password"></a>
+                    <span class="name">
+                        <span ><b>password</b></span>
+                        <a href="#password"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/connexion/connexion.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="successMessage"></a>
+                    <span class="name">
+                        <span ><b>successMessage</b></span>
+                        <a href="#successMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/connexion/connexion.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { RouterLink, RouterLinkActive, RouterOutlet } from &#x27;@angular/router&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../../services/auth/auth.service&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-connexion&#x27;,
+  standalone: true,
+  imports: [RouterLink, RouterOutlet, RouterLinkActive, FormsModule, CommonModule],
+  templateUrl: &#x27;./connexion.component.html&#x27;,
+  styleUrls: [&#x27;./connexion.component.css&#x27;]
+})
+
+/*
+  * Connexion component
+  * ce Class permet de gérer la connexion d&#x27;un utilisateur
+  * 
+  
+  */
+export class ConnexionComponent {
+  email: string &#x3D; &#x27;&#x27;;
+  password: string &#x3D; &#x27;&#x27;;
+  errorMessage: string &#x3D; &#x27;&#x27;;
+  isLoading: boolean &#x3D; false;
+  successMessage: string &#x3D; &#x27;&#x27;;
+
+  constructor(private authService: AuthService, private router: Router) { }
+
+  /*
+  * Fonction permettant de connecter un utilisateur
+  *  @param email: string
+  * @param password: string
+  * @return void
+  * 
+  */
+  login(): void {
+    // Reset messages
+    this.errorMessage &#x3D; &#x27;&#x27;;
+    this.successMessage &#x3D; &#x27;&#x27;;
+
+    // Validate inputs
+    if (!this.email || !this.password) {
+      this.errorMessage &#x3D; &#x27;Veuillez remplir tous les champs&#x27;;
+      return;
+    }
+
+    /* Vérifie si l&#x27;adresse email est valide */
+
+
+    if (!this.validateEmail(this.email)) {
+      this.errorMessage &#x3D; &#x27;Veuillez entrer une adresse email valide&#x27;;
+      return;
+    }
+
+    this.isLoading &#x3D; true;
+
+    this.authService.login(this.email, this.password).subscribe({
+      next: (response) &#x3D;&gt; {
+        this.isLoading &#x3D; false;
+        this.successMessage &#x3D; &#x27;Connexion réussie! Redirection en cours...&#x27;;
+        localStorage.setItem(&#x27;accessToken&#x27;, response.accessToken);
+
+        // permet de rediriger l&#x27;utilisateur vers la page d&#x27;accueil après 1.5 secondes
+        setTimeout(() &#x3D;&gt; {
+          this.router.navigate([&#x27;/home&#x27;]);
+        }, 1500);
+      },
+      error: (err) &#x3D;&gt; {
+        this.isLoading &#x3D; false;
+        if (err.status &#x3D;&#x3D;&#x3D; 401) {
+          this.errorMessage &#x3D; &#x27;Email ou mot de passe incorrect&#x27;;
+        } else if (err.status &#x3D;&#x3D;&#x3D; 0) {
+          this.errorMessage &#x3D; &#x27;Impossible de se connecter au serveur. Vérifiez votre connexion internet.&#x27;;
+        } else {
+          this.errorMessage &#x3D; &#x27;Une erreur est survenue. Veuillez réessayer plus tard.&#x27;;
+        }
+        console.error(&#x27;Login error:&#x27;, err);
+      }
+    });
+  }
+
+  /*
+  * Fonction permettant de valider le format d&#x27;une adresse email
+  * @param email: string
+  * @return boolean
+  * 
+  */
+
+  private validateEmail(email: string): boolean {
+    const re &#x3D; /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  clearError(): void {
+    this.errorMessage &#x3D; &#x27;&#x27;;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;main&quot;&gt;
+    &lt;div class&#x3D;&quot;auth-container&quot;&gt;
+        &lt;div class&#x3D;&quot;auth-card&quot;&gt;
+            &lt;h2&gt;Connexion&lt;/h2&gt;
+            &lt;form class&#x3D;&quot;auth-form&quot; (ngSubmit)&#x3D;&quot;login()&quot; (keyup)&#x3D;&quot;clearError()&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;email&quot; id&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;email&quot; 
+                           placeholder&#x3D;&quot;Entrez votre email&quot; required
+                           (focus)&#x3D;&quot;clearError()&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;password&quot;&gt;Mot de passe&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; [(ngModel)]&#x3D;&quot;password&quot; 
+                           placeholder&#x3D;&quot;Entrez votre mot de passe&quot; required
+                           (focus)&#x3D;&quot;clearError()&quot;&gt;
+                &lt;/div&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;auth-button&quot; [disabled]&#x3D;&quot;isLoading&quot;&gt;
+                    &lt;span *ngIf&#x3D;&quot;!isLoading&quot;&gt;Se connecter&lt;/span&gt;
+                    &lt;span *ngIf&#x3D;&quot;isLoading&quot; class&#x3D;&quot;loading&quot;&gt;
+                        &lt;span class&#x3D;&quot;spinner&quot;&gt;&lt;/span&gt; Connexion...
+                    &lt;/span&gt;
+                &lt;/button&gt;
+                
+                &lt;!-- Success Message --&gt;
+                &lt;div *ngIf&#x3D;&quot;successMessage&quot; class&#x3D;&quot;alert success&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon&quot;&gt;✓&lt;/span&gt; {{ successMessage }}
+                &lt;/div&gt;
+                
+                &lt;!-- Error Message --&gt;
+                &lt;div *ngIf&#x3D;&quot;errorMessage&quot; class&#x3D;&quot;alert error&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon&quot;&gt;!&lt;/span&gt; {{ errorMessage }}
+                &lt;/div&gt;
+            &lt;/form&gt;
+            &lt;div class&#x3D;&quot;auth-footer&quot;&gt;
+                &lt;p&gt;Pas encore inscrit ? &lt;a routerLink&#x3D;&quot;/inscription&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Créer un compte&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a routerLink&#x3D;&quot;/forgot-password&quot; class&#x3D;&quot;forgot-password&quot;&gt;Mot de passe oublié ?&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./connexion.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="main">    <div class="auth-container">        <div class="auth-card">            <h2>Connexion</h2>            <form class="auth-form" (ngSubmit)="login()" (keyup)="clearError()">                <div class="form-group">                    <label for="email">Email</label>                    <input type="email" id="email" name="email" [(ngModel)]="email"                            placeholder="Entrez votre email" required                           (focus)="clearError()">                </div>                <div class="form-group">                    <label for="password">Mot de passe</label>                    <input type="password" id="password" name="password" [(ngModel)]="password"                            placeholder="Entrez votre mot de passe" required                           (focus)="clearError()">                </div>                <button type="submit" class="auth-button" [disabled]="isLoading">                    <span *ngIf="!isLoading">Se connecter</span>                    <span *ngIf="isLoading" class="loading">                        <span class="spinner"></span> Connexion...                    </span>                </button>                                <!-- Success Message -->                <div *ngIf="successMessage" class="alert success">                    <span class="icon">✓</span> {{ successMessage }}                </div>                                <!-- Error Message -->                <div *ngIf="errorMessage" class="alert error">                    <span class="icon">!</span> {{ errorMessage }}                </div>            </form>            <div class="auth-footer">                <p>Pas encore inscrit ? <a routerLink="/inscription" routerLinkActive="active">Créer un compte</a></p>                <p><a routerLink="/forgot-password" class="forgot-password">Mot de passe oublié ?</a></p>            </div>        </div>    </div></main></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConnexionComponent', 'selector': 'app-connexion'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InscriptionComponent', 'selector': 'app-inscription'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'PublierTrajetComponent', 'selector': 'app-publier-trajet'},{'name': 'TrajetComponent', 'selector': 'app-trajet'},{'name': 'UtilisateurFormComponent', 'selector': 'app-utilisateur-form'},{'name': 'UtilisateurListComponent', 'selector': 'app-utilisateur-list'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConnexionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConnexionComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

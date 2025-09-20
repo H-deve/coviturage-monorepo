@@ -1,0 +1,631 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>covoiturage-front2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">covoiturage-front2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PublierTrajetComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/publier-trajet/publier-trajet.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-publier-trajet</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>CommonModule</code>
+                            <code>TimePipe</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./publier-trajet.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./publier-trajet.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#publierTrajetForm" >publierTrajetForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, trajetService: <a href="../injectables/TrajetService.html" target="_self">TrajetService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/publier-trajet/publier-trajet.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>trajetService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TrajetService.html" target="_self" >TrajetService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/publier-trajet/publier-trajet.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p> Fonction permettant de soumettre le formulaire de publication d&#39;un trajet</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publierTrajetForm"></a>
+                    <span class="name">
+                        <span ><b>publierTrajetForm</b></span>
+                        <a href="#publierTrajetForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/publier-trajet/publier-trajet.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { TrajetService } from &#x27;../services/trajet/trajet.service&#x27;;
+import { TimePipe } from &#x27;../pipe/time.pipe&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-publier-trajet&#x27;,
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, TimePipe],
+  templateUrl: &#x27;./publier-trajet.component.html&#x27;,
+  styleUrls: [&#x27;./publier-trajet.component.css&#x27;]
+})
+
+/**
+ * PublierTrajetComponent
+ * ce Class permet de gérer la publication d&#x27;un trajet
+ */
+export class PublierTrajetComponent {
+  publierTrajetForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private trajetService: TrajetService,
+    private router: Router
+  ) {
+    this.publierTrajetForm &#x3D; this.fb.group({
+      villeD: [&#x27;&#x27;, Validators.required],
+      villeA: [&#x27;&#x27;, Validators.required],
+      dateT: [&#x27;&#x27;, Validators.required],
+      nplace: [&#x27;&#x27;, Validators.required],
+      kms: [&#x27;&#x27;, Validators.required],
+      prix: [&#x27;&#x27;, Validators.required],
+      dureeDeTrajet: [&#x27;&#x27;, Validators.required]
+    });
+  }
+
+
+  /**
+   *  Fonction permettant de soumettre le formulaire de publication d&#x27;un trajet
+   * @return void
+   * @returns 
+   */
+  onSubmit() {
+    if (this.publierTrajetForm.valid) {
+      const formValue &#x3D; this.publierTrajetForm.value;
+      const utilisateurId &#x3D; localStorage.getItem(&#x27;userId&#x27;); // Get the logged-in user&#x27;s ID
+
+      if (!utilisateurId) {
+        alert(&#x27;Veuillez vous connecter pour publier un trajet.&#x27;);
+        return;
+      }
+
+      this.trajetService.getCityIdByName(formValue.villeD).subscribe(villeDData &#x3D;&gt; {
+        this.trajetService.getCityIdByName(formValue.villeA).subscribe(villeAData &#x3D;&gt; {
+          const trajetData &#x3D; {
+            ...formValue,
+            villeDId: villeDData.id,
+            villeAId: villeAData.id,
+            utilisateurId: +utilisateurId // Include the utilisateurId
+          };
+          this.trajetService.addTrajet(trajetData).subscribe({
+            next: () &#x3D;&gt; {
+              alert(&#x27;Trajet publié avec succès !&#x27;);
+              this.router.navigate([&#x27;/trajet&#x27;]);
+            },
+            error: (err) &#x3D;&gt; {
+              console.error(&#x27;Erreur lors de la publication du trajet:&#x27;, err);
+              alert(&#x27;Erreur lors de la publication du trajet.&#x27;);
+            }
+          });
+        });
+      });
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+  &lt;h2&gt;Publier un trajet&lt;/h2&gt;
+  &lt;form [formGroup]&#x3D;&quot;publierTrajetForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;villeD&quot; class&#x3D;&quot;form-label&quot;&gt;Ville de départ&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;villeD&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;villeD&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;villeA&quot; class&#x3D;&quot;form-label&quot;&gt;Ville d&#x27;arrivée&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;villeA&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;villeA&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;dateT&quot; class&#x3D;&quot;form-label&quot;&gt;Date et heure de départ&lt;/label&gt;
+      &lt;input type&#x3D;&quot;datetime-local&quot; id&#x3D;&quot;dateT&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;dateT&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;nplace&quot; class&#x3D;&quot;form-label&quot;&gt;Nombre de places&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;nplace&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;nplace&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;kms&quot; class&#x3D;&quot;form-label&quot;&gt;Kilomètres&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;kms&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;kms&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;prix&quot; class&#x3D;&quot;form-label&quot;&gt;Prix (€)&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;prix&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;prix&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label for&#x3D;&quot;dureeDeTrajet&quot; class&#x3D;&quot;form-label&quot;&gt;Durée de trajet&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;dureeDeTrajet&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;dureeDeTrajet&quot; /&gt;
+    &lt;/div&gt;
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Publier&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./publier-trajet.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-4">  <h2>Publier un trajet</h2>  <form [formGroup]="publierTrajetForm" (ngSubmit)="onSubmit()">    <div class="mb-3">      <label for="villeD" class="form-label">Ville de départ</label>      <input type="text" id="villeD" class="form-control" formControlName="villeD" />    </div>    <div class="mb-3">      <label for="villeA" class="form-label">Ville d\'arrivée</label>      <input type="text" id="villeA" class="form-control" formControlName="villeA" />    </div>    <div class="mb-3">      <label for="dateT" class="form-label">Date et heure de départ</label>      <input type="datetime-local" id="dateT" class="form-control" formControlName="dateT" />    </div>    <div class="mb-3">      <label for="nplace" class="form-label">Nombre de places</label>      <input type="number" id="nplace" class="form-control" formControlName="nplace" />    </div>    <div class="mb-3">      <label for="kms" class="form-label">Kilomètres</label>      <input type="number" id="kms" class="form-control" formControlName="kms" />    </div>    <div class="mb-3">      <label for="prix" class="form-label">Prix (€)</label>      <input type="number" id="prix" class="form-control" formControlName="prix" />    </div>    <div class="mb-3">      <label for="dureeDeTrajet" class="form-label">Durée de trajet</label>      <input type="text" id="dureeDeTrajet" class="form-control" formControlName="dureeDeTrajet" />    </div>    <button type="submit" class="btn btn-primary">Publier</button>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConnexionComponent', 'selector': 'app-connexion'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InscriptionComponent', 'selector': 'app-inscription'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'PublierTrajetComponent', 'selector': 'app-publier-trajet'},{'name': 'TrajetComponent', 'selector': 'app-trajet'},{'name': 'UtilisateurFormComponent', 'selector': 'app-utilisateur-form'},{'name': 'UtilisateurListComponent', 'selector': 'app-utilisateur-list'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PublierTrajetComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PublierTrajetComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

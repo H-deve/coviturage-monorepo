@@ -1,0 +1,41 @@
+<main class="main">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Connexion</h2>
+            <form class="auth-form" (ngSubmit)="login()" (keyup)="clearError()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="email" 
+                           placeholder="Entrez votre email" required
+                           (focus)="clearError()">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="password" 
+                           placeholder="Entrez votre mot de passe" required
+                           (focus)="clearError()">
+                </div>
+                <button type="submit" class="auth-button" [disabled]="isLoading">
+                    <span *ngIf="!isLoading">Se connecter</span>
+                    <span *ngIf="isLoading" class="loading">
+                        <span class="spinner"></span> Connexion...
+                    </span>
+                </button>
+                
+                <!-- Success Message -->
+                <div *ngIf="successMessage" class="alert success">
+                    <span class="icon">✓</span> {{ successMessage }}
+                </div>
+                
+                <!-- Error Message -->
+                <div *ngIf="errorMessage" class="alert error">
+                    <span class="icon">!</span> {{ errorMessage }}
+                </div>
+            </form>
+            <div class="auth-footer">
+                <p>Pas encore inscrit ? <a routerLink="/inscription" routerLinkActive="active">Créer un compte</a></p>
+                <p><a routerLink="/forgot-password" class="forgot-password">Mot de passe oublié ?</a></p>
+            </div>
+        </div>
+    </div>
+</main>

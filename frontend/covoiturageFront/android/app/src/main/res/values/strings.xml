@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">covoiturage-front2</string>
+    <string name="title_activity_main">covoiturage-front2</string>
+    <string name="package_name">fr.inter.YlaGO</string>
+    <string name="custom_url_scheme">fr.inter.YlaGO</string>
+</resources>

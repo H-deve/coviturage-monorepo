@@ -1,0 +1,16 @@
+<h2>{{ utilisateur.id ? 'Edit Utilisateur' : 'Create Utilisateur' }}</h2>
+<form (ngSubmit)="saveUtilisateur()">
+  <label>
+    First Name:
+    <input [(ngModel)]="utilisateur.firstname" name="firstname" required />
+  </label>
+  <label>
+    Last Name:
+    <input [(ngModel)]="utilisateur.lastname" name="lastname" required />
+  </label>
+  <label>
+    Email:
+    <input [(ngModel)]="utilisateur.email" name="email" type="email" required />
+  </label>
+  <button type="submit">Save</button>
+</form>

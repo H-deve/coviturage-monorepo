@@ -1,0 +1,99 @@
+
+    <!-- Map Container -->
+    <div id="map" style="height: 400px; margin-top: 20px;" *ngIf="map"></div>
+<div class="container mt-4">
+  <!-- Filter Section -->
+  <div class="filter-section bg-white p-3 mt-4 rounded shadow-sm">
+    <h4 class="mb-3">Filtrer les résultats</h4>
+    <div class="row">
+      <!-- Max Price -->
+      <div class="col-md-3">
+        <label for="priceRange" class="form-label">Prix maximum (€)</label>
+        <input
+          type="range"
+          id="priceRange"
+          class="form-range"
+          min="0"
+          max="100"
+          [(ngModel)]="maxPrice"
+          (input)="filterResults()"
+        />
+        <span class="fw-bold">{{ maxPrice }} €</span>
+      </div>
+
+      <!-- Departure Time -->
+      <div class="col-md-3">
+        <label for="departTime" class="form-label">Heure de départ</label>
+        <input
+          type="time"
+          id="departTime"
+          class="form-control"
+          [(ngModel)]="departTime"
+          (change)="filterResults()"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Ride Cards -->
+  <div *ngIf="trajets.length > 0; else noResults" class="mt-4">
+    <div class="row">
+      <div class="col-md-6" *ngFor="let trajet of trajets">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <!-- Driver Info -->
+              <div class="col-md-4 text-center">
+                <h5 class="driver-name fw-bold">
+                  {{ trajet.utilisateur?.nom }} {{ trajet.utilisateur?.prenom }}
+                </h5>
+                <div class="text-muted">
+                  <i class="fas fa-star text-warning"></i> 4.8 (120 avis)
+                </div>
+                <div class="mt-2">
+                  <i class="fas fa-car"></i>
+                  {{ trajet.utilisateur?.voiture?.modele }} 
+                  ({{ trajet.utilisateur?.voiture?.marque?.nom }})
+                </div>
+              </div>
+
+              <!-- Ride Details -->
+              <div class="col-md-5">
+                <h5 class="card-title">
+                  <i class="fas fa-map-marker-alt text-danger"></i> 
+                  {{ trajet.villeD.nom }} → {{ trajet.villeA.nom }}
+                </h5>
+                <p class="card-text">
+                  <i class="fas fa-calendar-alt text-primary"></i> 
+                  {{ trajet.dateT | date:'shortDate' }} <br />
+                  <i class="fas fa-clock text-success"></i> 
+                  Départ {{ trajet.dateT | date:'shortTime' }} <br />
+                  <i class="fas fa-users text-info"></i> 
+                  {{ trajet.availablePlaces }} places restantes <br />
+                  <i class="fas fa-user-check"></i> Inscriptions: 
+                  {{ trajet.inscriptions.length }}
+                </p>
+              </div>
+
+              <!-- Price and Booking -->
+              <div class="col-md-3 text-end">
+                <h4 class="price text-success fw-bold">{{ trajet.prix }} €</h4>
+                <button class="btn btn-primary w-100" (click)="reserver(trajet.id)">
+                  Réserver <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- No Results -->
+  <ng-template #noResults>
+    <div class="alert alert-warning text-center mt-4">
+      <i class="fas fa-exclamation-circle"></i> Aucun trajet disponible pour votre recherche.
+    </div>
+  </ng-template>
+</div>
