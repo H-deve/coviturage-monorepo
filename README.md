@@ -31,3 +31,6 @@ https://youtube.com/your-video-link
 
 Architecture overview:
 
+
+## 📦 Installation Instructions for developper
+
