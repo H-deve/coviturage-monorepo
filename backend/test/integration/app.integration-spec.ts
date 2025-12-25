@@ -394,16 +394,16 @@ describe('AppModule (integration)', () => {
 
   // describe('EmailService', () => {
   // it('should send an email', async () => {
-  //   // const result = await emailService.sendEmail('hajjo.dev@gmail.com', 'Test Subject', 'Test Body');
+  //   // const result = await emailService.sendEmail('sama.old@example.com', 'Test Subject', 'Test Body');
   //   // expect(result).toBeDefined();
-  //   // expect(result.accepted).toContain('hajjo.dev@gmail.com');
+  //   // expect(result.accepted).toContain('sama.old@example.com');
   // });
 
   it('doit envoyer des courriels à toutes les inscriptions d un trajet spécifique', async () => {
     const trajetId = 2;
     const inscriptions = [
-      { utilisateur: { email: 'mo3tasmhajjo100@gmail.com' } },
-      { utilisateur: { email: 'moatasmhajjo101@gmail.com' } },
+      { utilisateur: { email: 'sama.old@example.com' } },
+      { utilisateur: { email: 'sama2.old@example.com' } },
     ];
 
     mockInscriptionRepository.find.mockResolvedValue(inscriptions);
