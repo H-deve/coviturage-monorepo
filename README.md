@@ -66,4 +66,4 @@ This generates the frontend documentation and serves it locally.
 
 Open your browser at http://localhost:8080
 
-📖 Compodoc Usage Guide
+📖 Compodoc Usage Guide : https://compodoc.app/guides/getting-started.html
