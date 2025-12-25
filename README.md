@@ -1,18 +1,29 @@
-# 🚗 Carpooling App
-> A simple carpooling platform to publish, search, and reserve trips.
+# Carpoolin - Ride Sharing Platform 🚗
 
-## Intro
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-This project is a carpooling application where users can publish trips, search and filter available trips, and reserve seats.
+> **Connect. Share. Ride.** A modern carpooling platform connecting drivers and passengers for eco-friendly, cost-effective shared journeys.
 
-The backend is built with **NestJS**, the frontend with **Angular**, and the database uses **MySQL**.  
-An Android application is generated using **Capacitor**.  
-The project also uses **Jest**, **CI/CD**, and **SonarQube** for code quality.
+## 📖 Introduction
+Carpoolin is a full-stack ride-sharing platform designed to reduce urban congestion and promote sustainable transportation. Our platform bridges the gap between drivers with empty seats and passengers seeking affordable rides, creating a community-driven transportation network that's good for your wallet and the planet.
 
----
+## 🎬 Quick Demo
+*Watch our platform in action: [Demo Video Coming Soon]*
+*Live Demo: [https://carpoolin-demo.vercel.app](https://carpoolin-demo.vercel.app) (Coming Soon)*
 
-## Diagram / Video (Optional)
+## 📦 Installation (For End Users)
 
-🎥 Demo video:  
-https://youtube.com/your-video-link
-
+### **Android Users**
+1. Download from **Google Play Store** (Coming Soon)
+2. Or install the APK directly:
+   ```bash
+   # Download latest APK from our Releases page
+   # Enable "Install from unknown sources" in settings
+   adb install carpoolin-latest.apk
