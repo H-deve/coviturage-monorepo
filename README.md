@@ -61,7 +61,6 @@ carpoolin/
 - **Node.js 16+** & npm 8+
 - **MySQL 8+** database server
 - **Git** for version control
-- (Optional) **Android Studio** for mobile development
 
 ---
 
@@ -69,7 +68,7 @@ carpoolin/
 ```bash
 git clone https://github.com/yourusername/carpoolin.git
 cd carpoolin
-
+```
 2️⃣ Backend Setup (NestJS)
 bash
 
