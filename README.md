@@ -118,25 +118,7 @@ Note: The mobile app is for learning/testing purposes only.
 ###⚙️ Environment Configuration
 Backend Environment (.env)
 
-Create backend/.env from backend/.env.example:
-env
-# =====================
-# Database Configuration
-# =====================
-DB_HOST=localhost
-DB_PORT=3306
-DB_USERNAME=your_mysql_username
-DB_PASSWORD=your_mysql_password
-DB_DATABASE=carpoolin_db
-
-# =====================
-# JWT Configuration
-# =====================
-JWT_ACCESS_SECRET=your_access_token_secret
-JWT_REFRESH_SECRET=your_refresh_token_secret
-JWT_ACCESS_EXPIRATION=15m
-JWT_REFRESH_EXPIRATION=7d
-
+Create backend/.env from backend/.env.example
 
 ### 📱 Mobile Application (Capacitor)
 Current Status
