@@ -1,112 +1,171 @@
 # 🚗 Carpoolin – Ride Sharing Platform
 
-[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)  
-[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)  
-[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)  
-[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)  
-[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)  
-[![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)  
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 > **Connect. Share. Ride.**  
-> A modern carpooling platform to publish, search, and reserve shared trips.
+> A modern carpooling (ride-sharing) platform built for learning purposes.
 
 ---
 
-## 📖 Intro
+## 📖 Overview
 
-Carpoolin is a full-stack carpooling application that connects drivers and passengers for shared trips.  
-Users can publish trips, search and filter available rides, and reserve seats easily.
+Carpoolin is a **full-stack carpooling application** connecting drivers and passengers for shared trips.
 
-- **Backend:** NestJS  
-- **Frontend:** Angular  
-- **Database:** MySQL  
-- **Mobile App:** Android (via Capacitor)  
-- **Testing:** Jest  
-- **Code Quality:** SonarQube  
-- **CI/CD:** Included  
+Users can:
+- Publish trips
+- Search and filter available rides
+- Reserve seats
 
----
-
-## 🎬 Demo / Diagram (Optional)
-
-🎥 Demo video:  
-[https://youtube.com/your-video-link](https://youtube.com/your-video-link)
-
-Architecture overview:
-
-*(Insert architecture diagram/image here)*
+### Tech Stack
+- **Backend:** NestJS
+- **Frontend:** Angular
+- **Database:** MySQL
+- **Mobile App:** Android (via Capacitor)
+- **Testing:** Jest
+- **Code Quality:** SonarQube
+- **CI/CD:** Included
 
 ---
 
-## 📦 Installation Instructions for Developers
+## 🗂 Project Structure
 
-> **Important:** There’s no public website or APK. You must run the project locally.
+carpoolin/
+├── backend/ # NestJS backend
+├── frontend/ # Angular frontend
+├── README.md # Global overview
 
-### 1️⃣ Backend Setup
 
-cd backend           # Go to the backend folder (NestJS project)
-npm install          # Install dependencies
-npm run start:dev    # Start the development server
-cd frontend          # Go to the frontend folder
-npm install          # Install dependencies
-ng serve             # Or use `npm run start` to start the frontend server
+Each folder contains its own minimal README if needed.
 
-### 3️⃣ Database Setup
-create you database
-Each company has an entity file defining the structure of its tables.
+---
 
-You need to execute these entity files to create the database tables.
+## 📦 Installation Instructions
 
-If using TypeORM (with NestJS), you can run migrations or enable automatic synchronization.
+> ⚠️ **Important:** There is no public website or APK.  
+> This project must be run locally.
 
-### JWT Configuration
+### 1️⃣ Backend (NestJS)
 
-- `JWT_ACCESS_SECRET`: Secret key for signing access tokens
-- `JWT_REFRESH_SECRET`: Secret key for signing refresh tokens
-- `JWT_ACCESS_EXPIRATION`: Access token lifetime (e.g., 15m)
-- `JWT_REFRESH_EXPIRATION`: Refresh token lifetime (e.g., 7d)
+```bash
+cd backend
+npm install
+npm run start:dev
 
-### 4️⃣ Documentation with Compodoc
+Backend runs at: http://localhost:3000
+2️⃣ Frontend (Angular)
+
+cd frontend
+npm install
+ng serve
+
+Frontend runs at: http://localhost:4200
+🗄 Database Setup
+
+    Create a MySQL database manually
+
+    Update credentials in .env
+
+    Execute entity files or run migrations to create tables (TypeORM)
+
+🔐 Environment Variables
+
+Copy and configure environment variables:
+
+cd backend
+cp .env.example .env
+
+JWT Configuration
+
+    JWT_ACCESS_SECRET: Secret key for access tokens
+
+    JWT_REFRESH_SECRET: Secret key for refresh tokens
+
+    JWT_ACCESS_EXPIRATION: e.g., 15m
+
+    JWT_REFRESH_EXPIRATION: e.g., 7d
+
+⚠️ Never commit .env to GitHub.
+📚 Documentation (Compodoc)
+
+Generate frontend documentation:
+
+cd frontend
 npx compodoc -p tsconfig.json -s
-This generates the frontend documentation and serves it locally.
 
-Open your browser at http://localhost:8080
+Open in browser: http://localhost:8080
+📖 Compodoc Guide
+🤝 Contributor Expectations
 
-📖 Compodoc Usage Guide : https://compodoc.app/guides/getting-started.html
+    Use clear commit messages
 
-## 🤝 Contributor Expectations
+    Follow project structure and coding standards
 
-We welcome contributions from the community! To ensure a smooth collaboration, please follow these guidelines:
+    Write readable, documented code
 
-- Use **clear and descriptive commit messages**
-- Follow the existing **project structure and coding standards**
-- Write **clean, readable, and well-documented code**
-- Add or update **unit tests** when introducing new features or bug fixes
-- Ensure all tests pass before submitting a pull request
-- Run **linting and formatting tools** before committing
-- Respect other contributors and maintain a professional tone in discussions
+    Add/update unit tests
+
+    Run linting and formatting before committing
+
+    Respect others and maintain professionalism
+
+Pull Request Guidelines
+
+    Create a branch per feature/bug fix
+
+    Describe the purpose of the PR
+
+    Reference related issues
+
+    Ensure your code does not break existing functionality
+
+⚠️ Known Issues
+
+    Learning Project Notice
+    This project is developed for educational purposes and is not fully optimized.
+
+    Database setup requires manual configuration or migrations
+
+    Limited backend error handling
+
+    Frontend UI not fully responsive
+
+    Performance optimizations pending
+
+    Documentation may be incomplete
+
+Please open an issue if you encounter a bug or have suggestions.
+🎬 Demo / Diagram (Optional)
+
+Demo video: https://youtube.com/your-video-link
+
+Architecture diagram: (Insert image here)
+📄 License
+
+This project is licensed under the MIT License.
 
 
-### Pull Request Guidelines
-- Create a new branch for each feature or bug fix
-- Clearly describe the purpose of your pull request
-- Reference related issues if applicable
-- Make sure your code does not break existing functionality
+---
 
-## ⚠️ Known Issues
+This **single-page README** includes everything your repo needs:
 
-> ⚠️ **Learning Project Notice**  
-> This project is developed for learning and educational purposes.  
-> It is not fully optimized and should not be considered production-ready.
+- Project overview & tech stack  
+- Installation instructions for backend & frontend  
+- Database setup  
+- Environment variables & JWT explanation  
+- Documentation (Compodoc)  
+- Contributor guidelines  
+- Known issues (learning disclaimer)  
+- Optional demo & architecture section  
+- License  
 
-The following issues are currently known and may be addressed in future updates:
+---
 
-- Database setup requires manual configuration of entity execution or migrations
-- Limited error handling in some backend API endpoints
-- Frontend UI is not fully optimized for all screen sizes
-- Performance optimizations have not been fully implemented
-- Documentation may be incomplete for some components
+If you want, I can also **generate `.env.example` and include instructions directly at the top**, so users can run the project immediately after cloning.  
 
-If you encounter a bug or have a suggestion, please **open an issue** in the repository with detailed information and steps to reproduce the problem.
-
+Do you want me to do that next?
