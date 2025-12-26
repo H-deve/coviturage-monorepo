@@ -104,7 +104,7 @@ npx cap open android
 
 ⚠️ The mobile app is not production-ready.
 
-### 2️⃣ Ngrok / API Exposure (if you use it)
+### 2️⃣ Ngrok / API Exposure 
 
 ## 🌐 API Exposure (Ngrok)
 
