@@ -67,3 +67,39 @@ This generates the frontend documentation and serves it locally.
 Open your browser at http://localhost:8080
 
 📖 Compodoc Usage Guide : https://compodoc.app/guides/getting-started.html
+
+## 🤝 Contributor Expectations
+
+We welcome contributions from the community! To ensure a smooth collaboration, please follow these guidelines:
+
+- Use **clear and descriptive commit messages**
+- Follow the existing **project structure and coding standards**
+- Write **clean, readable, and well-documented code**
+- Add or update **unit tests** when introducing new features or bug fixes
+- Ensure all tests pass before submitting a pull request
+- Run **linting and formatting tools** before committing
+- Respect other contributors and maintain a professional tone in discussions
+
+
+### Pull Request Guidelines
+- Create a new branch for each feature or bug fix
+- Clearly describe the purpose of your pull request
+- Reference related issues if applicable
+- Make sure your code does not break existing functionality
+
+## ⚠️ Known Issues
+
+> ⚠️ **Learning Project Notice**  
+> This project is developed for learning and educational purposes.  
+> It is not fully optimized and should not be considered production-ready.
+
+The following issues are currently known and may be addressed in future updates:
+
+- Database setup requires manual configuration of entity execution or migrations
+- Limited error handling in some backend API endpoints
+- Frontend UI is not fully optimized for all screen sizes
+- Performance optimizations have not been fully implemented
+- Documentation may be incomplete for some components
+
+If you encounter a bug or have a suggestion, please **open an issue** in the repository with detailed information and steps to reproduce the problem.
+
