@@ -145,16 +145,6 @@ Mobile Testing Workflow
     Start backend: npm run start:dev
 
     Expose API for physical device testing:
-    bash
-
-# Install ngrok
-```bash
-npm install -g ngrok
-```
-# Expose backend
-ngrok http 3000
-
-Update frontend API URL in environment files
 
 Build and run mobile app:
 ```bash
@@ -278,21 +268,6 @@ Current Limitations
     SonarQube Documentation
 
     JWT Best Practices
-
-🆘 Getting Help
-Support Channels
-
-    Check Known Issues section above
-
-    Review Documentation generated with Compodoc
-
-    Open a GitHub Issue for bugs or feature requests
-
-    Check CI/CD Pipeline logs for build/test failures
-
-    Review error logs in backend/frontend consoles
-
-
 
 Happy Coding! 🚗💨
 
