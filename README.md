@@ -77,10 +77,6 @@ cd backend
 npm install
 ```
 
-
-# Edit the .env file with your database credentials
-# (See Environment Variables section below)
-
 # Start development server
 ```bash
 npm run start:dev
