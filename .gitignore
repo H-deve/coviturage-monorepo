@@ -36,7 +36,7 @@ ehthumbs.db
 # =====================
 # IDEs & Editors
 # =====================
-/.idea
+.idea
 .project
 .classpath
 .c9/
