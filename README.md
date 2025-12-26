@@ -62,7 +62,6 @@ carpoolin/
 - **MySQL 8+** database server
 - **Git** for version control
 
----
 
 ### 1️⃣ Clone the Repository
 ```bash
@@ -74,45 +73,55 @@ cd Ride-Sharing-Platform
 cd backend
 ```
 # Install dependencies
+```bash
 npm install
+```
+
 
 # Edit the .env file with your database credentials
 # (See Environment Variables section below)
 
 # Start development server
+```bash
 npm run start:dev
-
+```
 Backend runs at: http://localhost:3000
 
 ### 3️⃣ Database Setup
 TypeORM Migrations
-
+```bash
 cd backend
+```
 # Generate migration (after creating entities)
+```bash
 npm run migration:generate --name=InitialSchema
-
+```
 # Run migrations
+```bash
 npm run migration:run
-
+```
 
 ### 4️⃣ Frontend Setup (Angular)
-
+```bash
 cd ../frontend
-
+```
 # Install dependencies
+```bash
 npm install
-
+````
 # Start development server
+```bash
 ng serve
-
+````
 Frontend runs at: http://localhost:4200
 ### 5️⃣ Mobile App
 
 # From the frontend directory
+````bash
 npm run build           # Build Angular app
 npx cap sync           # Sync with Capacitor
 npx cap open android   # Open in Android Studio
-
+````
 Note: The mobile app is for learning/testing purposes only.
 
 ###⚙️ Environment Configuration
@@ -139,21 +148,21 @@ Mobile Testing Workflow
     bash
 
 # Install ngrok
+```bash
 npm install -g ngrok
-
+```
 # Expose backend
 ngrok http 3000
 
 Update frontend API URL in environment files
 
 Build and run mobile app:
-bash
-
+```bash
 cd frontend
 npm run build
 npx cap sync
 npx cap run android
-
+```
 ### 🔁 GitLab CI/CD Pipeline
 
 This project includes a GitLab CI/CD pipeline configured in .gitlab-ci.yml:
@@ -183,13 +192,14 @@ bash
 
 cd backend
 npm run compodoc
+``` 
 # Open: http://localhost:8080
 
 Generate Frontend Documentation (Angular)
-bash
-
+```bash
 cd frontend
 npx compodoc -p tsconfig.json -s
+```
 # Open: http://localhost:8080
 
 Compodoc Guide
@@ -197,17 +207,18 @@ For detailed documentation generation: https://compodoc.app/guides/getting-start
 
 ### 🧪 Testing
 Backend Tests
-
+```bash
 cd backend
 npm test              # Run unit tests
 npm run test:e2e      # Run E2E tests
 npm run test:cov      # Generate test coverage report
-
+```
 Frontend Tests
+```bash
 cd frontend
 npm test              # Run Karma unit tests
 npm run e2e           # Run Protractor E2E tests
-
+````
 
 ### 👥 User Workflows
 🚗 Driver Experience
@@ -249,14 +260,6 @@ Current Limitations
     Mobile app is experimental and not production-ready
 
     Testing coverage needs improvement in some modules
-
-
-
-
-
-
-
-
 
 🔗 Useful Resources
 
