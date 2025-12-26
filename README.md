@@ -35,7 +35,6 @@ Users can:
 
 ## 🗂 Project Structure
 
-carpoolin/
 
 ├── backend/ # NestJS backend
 ├── frontend/ # Angular frontend
