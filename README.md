@@ -44,12 +44,39 @@ This project was built to practice:
 
 ## 🏗️ Architecture
 
-carpoolin/
-├── backend/ # NestJS REST API
-├── frontend/ ├── android/ # Capacitor mobile app (experimental) # Angular web application
-├── .gitlab-ci.yml # GitLab CI/CD pipeline
-└── README.md
-text
+graph TB
+    subgraph "🌍 Presentation Layer"
+        A[Web Browser<br/>Angular App] --> B[Android Mobile<br/>Capacitor]
+        A --> C[iOS Mobile<br/>Capacitor]
+    end
+    
+    subgraph "🚀 Application Layer"
+        D[NestJS API Gateway<br/>REST API]
+        E[Authentication<br/>JWT Service]
+        F[Business Logic<br/>Trip/Booking Services]
+    end
+    
+    subgraph "💾 Data Layer"
+        G[MySQL Database]
+        H[Redis Cache<br/>Optional]
+        I[File Storage<br/>User Images]
+    end
+    
+    subgraph "⚙️ DevOps & Tools"
+        J[GitLab CI/CD<br/>Pipeline]
+        K[SonarQube<br/>Code Quality]
+        L[Docker<br/>Containerization]
+    end
+    
+    A --> D
+    B --> D
+    C --> D
+    D --> E
+    D --> F
+    E --> G
+    F --> G
+    F --> H
+    J --> K
 
 
 ## 🚀 Quick Start
