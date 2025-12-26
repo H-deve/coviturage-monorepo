@@ -42,41 +42,23 @@ This project was built to practice:
 - Mobile integration using Capacitor
 - Database design with TypeORM/MySQL
 
-## 🏗️ Architecture
-```mermaid
-graph TB
-    subgraph "🌍 Presentation Layer"
-        A[Web Browser<br/>Angular App] --> B[Android Mobile<br/>Capacitor]
-        A --> C[iOS Mobile<br/>Capacitor]
-    end
-    
-    subgraph "🚀 Application Layer"
-        D[NestJS API Gateway<br/>REST API]
-        E[Authentication<br/>JWT Service]
-        F[Business Logic<br/>Trip/Booking Services]
-    end
-    
-    subgraph "💾 Data Layer"
-        G[MySQL Database]
-        H[Redis Cache<br/>Optional]
-        I[File Storage<br/>User Images]
-    end
-    
-    subgraph "⚙️ DevOps & Tools"
-        J[GitLab CI/CD<br/>Pipeline]
-        K[SonarQube<br/>Code Quality]
-        L[Docker<br/>Containerization]
-    end
-    
-    A --> D
-    B --> D
-    C --> D
-    D --> E
-    D --> F
-    E --> G
-    F --> G
-    F --> H
-    J --> K
+# 🚗 Carpoolin – Ride Sharing Platform
+
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
+
+> **Connect. Share. Ride.** – A carpooling platform for learning
+
+## 🏗️ Modern Architecture
+carpoolin/
+├── -->backend/ # NestJS REST API
+├── frontend/ 
+├── android/ # Capacitor mobile app (experimental) # Angular web application
+├── .gitlab-ci.yml # GitLab CI/CD pipeline
+└── README.md
 
 
 ## 🚀 Quick Start
