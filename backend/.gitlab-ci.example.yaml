@@ -1,9 +1,9 @@
 stages:
-  # - build
-  # - test
-  # - sonarqube-check
-  # - sonarqube-vulnerability-report
-  # - deploy
+  - build
+  - test
+  - sonarqube-check
+  - sonarqube-vulnerability-report
+  - deploy
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -26,18 +26,14 @@ test:
   script:
     - npm ci
     - npx jest --version
-    - npx jest --config ./test/integration/jest-integration.json --collectCoverage --coverageDirectory="./coverage" --ci --reporters=default --reporters=jest-junit --watchAll=false
+    - npx jest --config ./test/integration/jest-integration.json --collectCoverage --coverageDirectory="./coverage" --ci --watchAll=false
   artifacts:
     paths:
       - coverage/lcov.info
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: coverage/lcov.info
 
 sonarqube-check:
   stage: sonarqube-check
-  image: 
+  image:
     name: sonarsource/sonar-scanner-cli:5.0
     entrypoint: [""]
   variables:
@@ -47,25 +43,25 @@ sonarqube-check:
     key: "${CI_JOB_NAME}"
     paths:
       - .sonar/cache
-  script: 
+  script:
     - sonar-scanner
   allow_failure: true
   only:
     - merge_requests
-    - master
     - main
     - develop
 
 sonarqube-vulnerability-report:
   stage: sonarqube-vulnerability-report
   script:
-    - 'curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=Soutenance4Moatasm&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json'
+    - >
+      curl -u "${SONAR_TOKEN}:"
+      "${SONAR_HOST_URL}/api/issues/gitlab_sast_export
+      ?projectKey=${SONAR_PROJECT_KEY}
+      &branch=${CI_COMMIT_BRANCH}
+      &pullRequest=${CI_MERGE_REQUEST_IID}"
+      -o gl-sast-sonar-report.json
   allow_failure: true
-  only:
-    - merge_requests
-    - master
-    - main
-    - develop
   artifacts:
     expire_in: 1 day
     reports:
@@ -76,10 +72,12 @@ sonarqube-vulnerability-report:
 deploy:
   stage: deploy
   image: mwienk/docker-git-ftp
-  dependencies:
-    - build
   only:
     - main
   script:
-     - apt-get update -qq && apt-get install -y -qq lftp
-     - lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mkdir -p NestTest; cd NestTest; mirror -Rv ./ --ignore-time --parallel=3 --exclude .git/"
+    - apt-get update -qq && apt-get install -y -qq lftp
+    - >
+      lftp -c "
+      set ftp:ssl-allow no;
+      open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST;
+      mirror -Rv ./ --ignore-time --parallel=3 --exclude .git/"
