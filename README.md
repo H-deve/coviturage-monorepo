@@ -67,8 +67,6 @@ Frontend runs at: http://localhost:4200
 
     Create a MySQL database manually
 
-    Update credentials in .env
-
     Execute entity files or run migrations to create tables (TypeORM)
 
 🔐 Environment Variables
@@ -88,7 +86,7 @@ JWT Configuration
 
     JWT_REFRESH_EXPIRATION: e.g., 7d
 
-⚠️ Never commit .env to GitHub.
+
 📚 Documentation (Compodoc)
 
 Generate frontend documentation:
@@ -98,29 +96,7 @@ npx compodoc -p tsconfig.json -s
 
 Open in browser: http://localhost:8080
 📖 Compodoc Guide
-🤝 Contributor Expectations
 
-    Use clear commit messages
-
-    Follow project structure and coding standards
-
-    Write readable, documented code
-
-    Add/update unit tests
-
-    Run linting and formatting before committing
-
-    Respect others and maintain professionalism
-
-Pull Request Guidelines
-
-    Create a branch per feature/bug fix
-
-    Describe the purpose of the PR
-
-    Reference related issues
-
-    Ensure your code does not break existing functionality
 
 ⚠️ Known Issues
 
@@ -137,33 +113,8 @@ Pull Request Guidelines
 
     Documentation may be incomplete
 
-Please open an issue if you encounter a bug or have suggestions.
-🎬 Demo / Diagram (Optional)
-
-Demo video: https://youtube.com/your-video-link
-
-Architecture diagram: (Insert image here)
-📄 License
-
-This project is licensed under the MIT License.
 
 
 
 
-This **single-page README** includes everything your repo needs:
 
-- Project overview & tech stack  
-- Installation instructions for backend & frontend  
-- Database setup  
-- Environment variables & JWT explanation  
-- Documentation (Compodoc)  
-- Contributor guidelines  
-- Known issues (learning disclaimer)  
-- Optional demo & architecture section  
-- License  
-
-
-
-If you want, I can also **generate `.env.example` and include instructions directly at the top**, so users can run the project immediately after cloning.  
-
-Do you want me to do that next?
