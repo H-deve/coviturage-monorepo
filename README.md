@@ -28,7 +28,7 @@ Users can:
 - **Mobile App:** Android (via Capacitor)
 - **Testing:** Jest
 - **Code Quality:** SonarQube
-- **CI/CD:** Included
+- **CI/CD:** Included with gitlab
 
 
 ## 🗂 Project Structure
@@ -69,7 +69,7 @@ Frontend runs at: http://localhost:4200
 
     Execute entity files or run migrations to create tables (TypeORM)
 
-🔐 Environment Variables
+### 🔐 Environment Variables
 
 Copy and configure environment variables:
 
@@ -86,8 +86,49 @@ JWT Configuration
 
     JWT_REFRESH_EXPIRATION: e.g., 7d
 
+## 📱 Mobile Application (Capacitor)
 
-📚 Documentation (Compodoc)
+This project includes an experimental Android mobile application built using **Capacitor**.
+
+Current status:
+- Mobile build is for learning and testing purposes only
+- Some features may be incomplete or unstable
+- Requires a running backend API
+
+Basic commands:
+
+cd frontend
+npm run build
+npx cap sync
+npx cap open android
+
+⚠️ The mobile app is not production-ready.
+
+### 2️⃣ Ngrok / API Exposure (if you use it)
+
+## 🌐 API Exposure (Ngrok)
+
+For mobile testing, the backend API may need to be accessible from a physical device.
+
+Ngrok can be used to expose the local backend:
+
+ngrok http 3000
+
+
+### 3️⃣ CI/CD clarification (small but professional)
+
+Since you use GitLab CI:
+
+## 🔁 CI/CD
+
+This project includes a **GitLab CI/CD pipeline** for:
+- Build
+- Testing
+- Code quality analysis (SonarQube)
+
+⚠️ CI/CD secrets (tokens, passwords) are not included in the repository and must be configured using GitLab CI/CD variables.
+
+### 📚 Documentation (Compodoc)
 
 Generate NestJs documentation
 cd backend
@@ -103,7 +144,7 @@ Open in browser: http://localhost:8080
 📖 Compodoc Guide : https://compodoc.app/guides/getting-started.html
 
 
-⚠️ Known Issues
+### ⚠️ Known Issues
 
     Learning Project Notice
     This project is developed for educational purposes and is not fully optimized.
@@ -118,7 +159,15 @@ Open in browser: http://localhost:8080
 
     Documentation may be incomplete
 
+## 🎯 Learning Goals
 
+This project was built to practice:
+- Full-stack architecture (NestJS + Angular)
+- Authentication with JWT
+- REST API design
+- CI/CD pipelines
+- Code quality tools (SonarQube)
+- Mobile integration using Capacitor
 
 
 
