@@ -1,258 +1,171 @@
-🚗 Carpoolin – Modern Ride-Sharing Platform
+# 🚗 Carpoolin – Ride Sharing Platform
 
-https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white
-https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white
-https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white
-https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
-https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white
-https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white)](https://www.sonarqube.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-    Connect. Share. Ride. – A full-stack carpooling platform for educational purposes
+> **Connect. Share. Ride.**  
+> A modern carpooling (ride-sharing) platform built for learning purposes.
 
-✨ Features
+---
 
-    Trip Management: Publish trips, search rides, and reserve seats
+## 📖 Overview
 
-    User Roles: Drivers and passengers with distinct interfaces
+Carpoolin is a **full-stack carpooling application** connecting drivers and passengers for shared trips.
 
-    Real-time Search: Filter available rides by date, route, and price
+Users can:
+- Publish trips
+- Search and filter available rides
+- Reserve seats
 
-    Mobile Ready: Android app via Capacitor
+### Tech Stack
+- **Backend:** NestJS
+- **Frontend:** Angular
+- **Database:** MySQL
+- **Mobile App:** Android (via Capacitor)
+- **Testing:** Jest
+- **Code Quality:** SonarQube
+- **CI/CD:** Included
 
-    Secure Authentication: JWT-based auth with refresh tokens
+---
 
-    Code Quality: Integrated testing and SonarQube analysis
-
-🏗️ Architecture
-text
+## 🗂 Project Structure
 
 carpoolin/
-├── backend/          # NestJS REST API
-├── frontend/         # Angular web application
-├── android/          # Capacitor mobile app
-└── README.md         # You are here
+├── backend/ # NestJS backend
+├── frontend/ # Angular frontend
+├── README.md # Global overview
 
-🚀 Quick Start
-Prerequisites
 
-    Node.js 18+ & npm
+Each folder contains its own minimal README if needed.
 
-    MySQL 8+
+---
 
-    Git
+## 📦 Installation Instructions
 
-1. Clone & Setup
-bash
+> ⚠️ **Important:** There is no public website or APK.  
+> This project must be run locally.
 
-git clone https://github.com/yourusername/carpoolin.git
-cd carpoolin
+### 1️⃣ Backend (NestJS)
 
-2. Database Setup
-sql
+```bash
+cd backend
+npm install
+npm run start:dev
 
-CREATE DATABASE carpoolin;
--- Import schema from backend/schema.sql or run migrations
+Backend runs at: http://localhost:3000
+2️⃣ Frontend (Angular)
 
-3. Backend Setup
-bash
+cd frontend
+npm install
+ng serve
+
+Frontend runs at: http://localhost:4200
+🗄 Database Setup
+
+    Create a MySQL database manually
+
+    Update credentials in .env
+
+    Execute entity files or run migrations to create tables (TypeORM)
+
+🔐 Environment Variables
+
+Copy and configure environment variables:
 
 cd backend
-cp .env.example .env  # Configure your environment variables
-npm install
-npm run start:dev     # http://localhost:3000
+cp .env.example .env
 
-4. Frontend Setup
-bash
+JWT Configuration
 
-cd ../frontend
-npm install
-ng serve              # http://localhost:4200
+    JWT_ACCESS_SECRET: Secret key for access tokens
 
-5. Mobile App (Optional)
-bash
+    JWT_REFRESH_SECRET: Secret key for refresh tokens
 
-cd ../frontend
-npx cap add android
-npx cap run android
+    JWT_ACCESS_EXPIRATION: e.g., 15m
 
-⚙️ Environment Configuration
-Backend (.env)
-env
+    JWT_REFRESH_EXPIRATION: e.g., 7d
 
-# Database
-DB_HOST=localhost
-DB_PORT=3306
-DB_USERNAME=root
-DB_PASSWORD=yourpassword
-DB_NAME=carpoolin
+⚠️ Never commit .env to GitHub.
+📚 Documentation (Compodoc)
 
-# JWT Authentication
-JWT_ACCESS_SECRET=your-access-secret-key-here
-JWT_REFRESH_SECRET=your-refresh-secret-key-here
-JWT_ACCESS_EXPIRATION=15m
-JWT_REFRESH_EXPIRATION=7d
-
-# App
-PORT=3000
-NODE_ENV=development
-
-Security Note
-
-⚠️ Never commit actual .env files to version control. Use .env.example as a template.
-📚 API Documentation
-Generate API Docs
-bash
-
-cd backend
-npm run doc           # Swagger UI at http://localhost:3000/api
-
-Generate Frontend Documentation
-bash
+Generate frontend documentation:
 
 cd frontend
 npx compodoc -p tsconfig.json -s
-# Open http://localhost:8080
 
-🧪 Testing
-Backend Tests
-bash
+Open in browser: http://localhost:8080
+📖 Compodoc Guide
+🤝 Contributor Expectations
 
-cd backend
-npm test              # Unit tests
-npm run test:e2e      # E2E tests
-npm run test:cov      # Test coverage
+    Use clear commit messages
 
-Frontend Tests
-bash
+    Follow project structure and coding standards
 
-cd frontend
-npm test              # Karma unit tests
-npm run e2e           # Protractor E2E tests
+    Write readable, documented code
 
-Code Quality
-bash
+    Add/update unit tests
 
-# Linting
-cd backend && npm run lint
-cd frontend && npm run lint
+    Run linting and formatting before committing
 
-# SonarQube analysis
-sonar-scanner
+    Respect others and maintain professionalism
 
-👥 User Roles & Workflows
-🚗 Driver
+Pull Request Guidelines
 
-    Register/Login
+    Create a branch per feature/bug fix
 
-    Create trip with details (route, date, seats, price)
+    Describe the purpose of the PR
 
-    Manage bookings
+    Reference related issues
 
-    Start/complete trips
+    Ensure your code does not break existing functionality
 
-👤 Passenger
+⚠️ Known Issues
 
-    Register/Login
+    Learning Project Notice
+    This project is developed for educational purposes and is not fully optimized.
 
-    Search available trips
+    Database setup requires manual configuration or migrations
 
-    Filter by date, price, location
+    Limited backend error handling
 
-    Book seats
-
-    View booking history
-
-🤝 Contributing
-
-We welcome contributions! Please follow these guidelines:
-Branch Strategy
-
-    main → Production-ready code
-
-    develop → Integration branch
-
-    feature/* → New features
-
-    bugfix/* → Bug fixes
-
-    hotfix/* → Critical production fixes
-
-Commit Convention
-text
-
-feat: add trip search functionality
-fix: resolve booking validation issue
-docs: update installation instructions
-style: format code with prettier
-refactor: improve authentication service
-test: add unit tests for user module
-chore: update dependencies
-
-Pull Request Process
-
-    Fork the repository
-
-    Create a feature branch
-
-    Commit changes following conventions
-
-    Add/update tests
-
-    Update documentation if needed
-
-    Submit PR with clear description
-
-    Ensure CI passes
-
-🐛 Known Limitations
-
-    Educational Project Notice: This is a learning project with certain limitations:
-
-    Database requires manual setup/migrations
-
-    Basic error handling implementation
-
-    Limited UI responsiveness on mobile web
+    Frontend UI not fully responsive
 
     Performance optimizations pending
 
     Documentation may be incomplete
 
-    No production deployment pipeline
+Please open an issue if you encounter a bug or have suggestions.
+🎬 Demo / Diagram (Optional)
 
-Please report issues and suggestions via GitHub Issues.
-🔧 Troubleshooting
-Issue	Solution
-Database connection fails	Verify MySQL is running and credentials in .env
-JWT errors	Ensure JWT secrets are set and match
-CORS errors	Check backend CORS configuration
-Build failures	Clear node_modules and reinstall: rm -rf node_modules && npm install
-Capacitor issues	Run npx cap sync after npm install
-📊 Project Status
-Component	Status	Coverage
-Backend	✅ Stable	85%
-Frontend	✅ Functional	75%
-Mobile App	🔧 In Progress	40%
-Documentation	📝 Ongoing	60%
-Tests	🧪 Comprehensive	80%
+Demo video: https://youtube.com/your-video-link
+
+Architecture diagram: (Insert image here)
 📄 License
 
-MIT License © 2024 Carpoolin Contributors
+This project is licensed under the MIT License.
 
-See LICENSE for details.
-🔗 Useful Links
 
-    NestJS Documentation
+---
 
-    Angular Documentation
+This **single-page README** includes everything your repo needs:
 
-    MySQL Documentation
+- Project overview & tech stack  
+- Installation instructions for backend & frontend  
+- Database setup  
+- Environment variables & JWT explanation  
+- Documentation (Compodoc)  
+- Contributor guidelines  
+- Known issues (learning disclaimer)  
+- Optional demo & architecture section  
+- License  
 
-    Capacitor Documentation
+---
 
-    TypeORM Guide
+If you want, I can also **generate `.env.example` and include instructions directly at the top**, so users can run the project immediately after cloning.  
 
-Happy Coding! 🚗💨
-
-For questions or support, please open an issue in the repository.
+Do you want me to do that next?
