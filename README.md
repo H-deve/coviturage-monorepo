@@ -43,7 +43,7 @@ This project was built to practice:
 - Database design with TypeORM/MySQL
 
 ## 🏗️ Architecture
-
+```mermaid
 graph TB
     subgraph "🌍 Presentation Layer"
         A[Web Browser<br/>Angular App] --> B[Android Mobile<br/>Capacitor]
