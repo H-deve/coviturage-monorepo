@@ -76,9 +76,6 @@ cd backend
 # Install dependencies
 npm install
 
-# Copy environment configuration
-cp .env.example .env
-
 # Edit the .env file with your database credentials
 # (See Environment Variables section below)
 
@@ -87,54 +84,18 @@ npm run start:dev
 
 Backend runs at: http://localhost:3000
 
-3️⃣ Database Setup
-Option A: Manual SQL (Quick Start)
-sql
-
--- Create database
-CREATE DATABASE IF NOT EXISTS carpoolin_db;
-USE carpoolin_db;
-
--- Basic tables (simplified)
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    role ENUM('driver', 'passenger') DEFAULT 'passenger',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS trips (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    driver_id INT NOT NULL,
-    origin VARCHAR(255) NOT NULL,
-    destination VARCHAR(255) NOT NULL,
-    departure_time DATETIME NOT NULL,
-    available_seats INT NOT NULL,
-    price_per_seat DECIMAL(10,2),
-    status ENUM('scheduled', 'in_progress', 'completed', 'cancelled') DEFAULT 'scheduled',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (driver_id) REFERENCES users(id) ON DELETE CASCADE
-);
-
-Option B: TypeORM Migrations
-bash
+### 3️⃣ Database Setup
+TypeORM Migrations
 
 cd backend
-
 # Generate migration (after creating entities)
 npm run migration:generate --name=InitialSchema
 
 # Run migrations
 npm run migration:run
 
-# Revert if needed
-npm run migration:revert
 
-4️⃣ Frontend Setup (Angular)
-bash
+### 4️⃣ Frontend Setup (Angular)
 
 cd ../frontend
 
@@ -145,8 +106,7 @@ npm install
 ng serve
 
 Frontend runs at: http://localhost:4200
-5️⃣ Mobile App (Optional - Experimental)
-bash
+### 5️⃣ Mobile App
 
 # From the frontend directory
 npm run build           # Build Angular app
@@ -154,12 +114,12 @@ npx cap sync           # Sync with Capacitor
 npx cap open android   # Open in Android Studio
 
 Note: The mobile app is for learning/testing purposes only.
-⚙️ Environment Configuration
+
+###⚙️ Environment Configuration
 Backend Environment (.env)
 
 Create backend/.env from backend/.env.example:
 env
-
 # =====================
 # Database Configuration
 # =====================
@@ -177,23 +137,8 @@ JWT_REFRESH_SECRET=your_refresh_token_secret
 JWT_ACCESS_EXPIRATION=15m
 JWT_REFRESH_EXPIRATION=7d
 
-# =====================
-# Application Configuration
-# =====================
-NODE_ENV=development
-PORT=3000
 
-🔒 Security Notes
-
-    Never commit .env files to version control
-
-    Use strong, random strings for JWT secrets
-
-    Generate secrets: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-
-    Keep different credentials for development/production
-
-📱 Mobile Application (Capacitor)
+### 📱 Mobile Application (Capacitor)
 Current Status
 
     ✅ Mobile build works for learning and testing
@@ -227,7 +172,7 @@ npm run build
 npx cap sync
 npx cap run android
 
-🔁 GitLab CI/CD Pipeline
+### 🔁 GitLab CI/CD Pipeline
 
 This project includes a GitLab CI/CD pipeline configured in .gitlab-ci.yml:
 Pipeline Stages
@@ -250,7 +195,7 @@ Secrets (tokens, passwords) are not included in the repository. Configure them a
 
     Deployment tokens (if deploying)
 
-📚 Documentation
+### 📚 Documentation
 Generate API Documentation (NestJS)
 bash
 
@@ -266,11 +211,10 @@ npx compodoc -p tsconfig.json -s
 # Open: http://localhost:8080
 
 Compodoc Guide
-
 For detailed documentation generation: https://compodoc.app/guides/getting-started.html
-🧪 Testing
+
+### 🧪 Testing
 Backend Tests
-bash
 
 cd backend
 npm test              # Run unit tests
@@ -278,25 +222,12 @@ npm run test:e2e      # Run E2E tests
 npm run test:cov      # Generate test coverage report
 
 Frontend Tests
-bash
-
 cd frontend
 npm test              # Run Karma unit tests
 npm run e2e           # Run Protractor E2E tests
 
-Code Quality Checks
-bash
 
-# Backend linting
-cd backend && npm run lint
-
-# Frontend linting  
-cd frontend && npm run lint
-
-# SonarQube analysis (requires setup)
-sonar-scanner
-
-👥 User Workflows
+### 👥 User Workflows
 🚗 Driver Experience
 
     Register/Login as driver
@@ -307,7 +238,6 @@ sonar-scanner
 
     Trip Management - Start, complete, or cancel trips
 
-    Earnings - View trip history and earnings
 
 👤 Passenger Experience
 
@@ -317,51 +247,6 @@ sonar-scanner
 
     Book Seats - Reserve seats on available trips
 
-    Trip Status - Track upcoming and past rides
-
-    Payments - Simulated payment processing
-
-    Ratings - Rate drivers after completed trips
-
-🤝 Contributing
-Branch Strategy
-
-    main → Production-ready code
-
-    develop → Integration branch for features
-
-    feature/* → New feature development
-
-    bugfix/* → Bug fixes
-
-    hotfix/* → Critical production fixes
-
-Commit Convention
-bash
-
-feat: add trip search with filters
-fix: resolve booking validation error
-docs: update installation instructions
-style: format code with prettier
-refactor: improve authentication service
-test: add unit tests for user module  
-chore: update dependencies
-
-Pull Request Process
-
-    Fork the repository
-
-    Create a feature/bugfix branch
-
-    Commit changes following conventions
-
-    Add/update relevant tests
-
-    Update documentation if needed
-
-    Submit PR with clear description
-
-    Ensure all CI checks pass
 
 🐛 Known Issues & Limitations
 
@@ -383,62 +268,14 @@ Current Limitations
 
     Testing coverage needs improvement in some modules
 
-Areas for Future Improvement
 
-    Add real-time notifications with WebSockets
 
-    Implement payment gateway integration
 
-    Add Docker support for easier deployment
 
-    Enhance security with rate limiting, input validation
 
-    Improve test coverage to >90%
 
-    Add admin dashboard for user/trip management
 
-Please open an issue if you encounter bugs or have suggestions for improvements.
-🔧 Troubleshooting Guide
-Issue	Solution
-Database connection fails	Verify MySQL service is running and .env credentials are correct
-JWT authentication errors	Ensure JWT secrets are set in .env and match
-CORS errors	Check backend CORS configuration in main.ts
-Angular build fails	Clear node_modules: rm -rf node_modules && npm install
-Capacitor sync issues	Run npx cap sync after npm install
-Ngrok connection refused	Ensure backend is running on port 3000
-Mobile app connection errors	Update API URL in environment files to ngrok URL
-TypeORM migration errors	Check database permissions and connection
-Common Commands for Issues
-bash
 
-# Clear and reinstall dependencies
-rm -rf node_modules package-lock.json
-npm install
-
-# Reset database (development only)
-npm run schema:drop && npm run schema:sync
-
-# Check environment variables
-echo $DB_HOST
-echo $DB_USERNAME
-
-📊 Project Status
-Component	Status	Coverage	Notes
-Backend API	✅ Stable	~85%	Core CRUD operations complete
-Frontend Web	✅ Functional	~75%	Basic UI with essential features
-Mobile App	🔧 Experimental	~40%	Learning/testing only
-Database	✅ Configured	N/A	MySQL with TypeORM
-Authentication	✅ Implemented	~90%	JWT with refresh tokens
-Documentation	📝 Ongoing	~60%	API docs via Compodoc
-Testing Suite	🧪 Comprehensive	~80%	Jest for backend, Karma for frontend
-CI/CD Pipeline	✅ Configured	~90%	GitLab CI with SonarQube
-📄 License
-
-MIT License © 2024 Carpoolin Contributors
-
-See LICENSE file for complete details.
-
-Permissions: This software may be used, modified, and distributed for educational and personal projects. Commercial use requires permission.
 🔗 Useful Resources
 
     NestJS Documentation
@@ -470,53 +307,10 @@ Support Channels
 
     Review error logs in backend/frontend consoles
 
-Before Asking for Help
 
-    Verify all prerequisites are installed
-
-    Check that .env file is properly configured
-
-    Ensure database is running and accessible
-
-    Review console errors in browser/terminal
-
-    Try the troubleshooting steps above
-
-Note: This is an educational project maintained by learners. Response times may vary.
-🎬 Demo Access
-Local Demo
-
-    Start backend: npm run start:dev
-
-    Start frontend: ng serve
-
-    Open browser: http://localhost:4200
-
-Test Credentials (Development)
-text
-
-Driver: driver@example.com / password123
-Passenger: passenger@example.com / password123
-
-Architecture Diagram
-
-https://docs/architecture.png
-(Add your architecture diagram image here)
 
 Happy Coding! 🚗💨
 
 Built with passion for learning full-stack development. Connect drivers and passengers, one ride at a time.
-text
 
 
-This is a complete, professional README file ready to use. It includes:
-
-1. **All your original content** from both versions
-2. **Proper database configuration** for your TypeORM setup
-3. **Clear environment variables** section with examples
-4. **Step-by-step installation** that matches your actual codebase
-5. **Mobile app instructions** with ngrok setup
-6. **Complete troubleshooting guide**
-7. **All badges and formatting** you wanted
-
-Just copy and paste this into your `README.md` file!
