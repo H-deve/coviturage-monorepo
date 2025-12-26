@@ -42,23 +42,17 @@ This project was built to practice:
 - Mobile integration using Capacitor
 - Database design with TypeORM/MySQL
 
-# 🚗 Carpoolin – Ride Sharing Platform
-
-[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
-[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
-[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
-
-> **Connect. Share. Ride.** – A carpooling platform for learning
 
 ## 🏗️ Modern Architecture
+```text
 carpoolin/
-├── -->backend/ # NestJS REST API
-├── frontend/ 
-├── android/ # Capacitor mobile app (experimental) # Angular web application
-├── .gitlab-ci.yml # GitLab CI/CD pipeline
-└── README.md
+├── backend/            # NestJS REST API
+├── frontend/           # Angular web application
+│   └── android/        # Capacitor Android app (experimental)
+├── .gitlab-ci.yml      # GitLab CI/CD pipeline
+└── README.md           # Global project documentation
+```
+
 
 
 ## 🚀 Quick Start
