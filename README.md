@@ -115,9 +115,7 @@ Ngrok can be used to expose the local backend:
 ngrok http 3000
 
 
-### 3️⃣ CI/CD clarification (small but professional)
-
-Since you use GitLab CI:
+### 3️⃣ CI/CD clarification 
 
 ## 🔁 CI/CD
 
