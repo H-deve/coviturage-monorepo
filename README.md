@@ -63,7 +63,7 @@ npm install
 ng serve
 
 Frontend runs at: http://localhost:4200
-🗄 Database Setup
+### 🗄 Database Setup
 
     Create a MySQL database manually
 
