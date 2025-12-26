@@ -95,7 +95,8 @@ cd frontend
 npx compodoc -p tsconfig.json -s
 
 Open in browser: http://localhost:8080
-📖 Compodoc Guide
+
+📖 Compodoc Guide : https://compodoc.app/guides/getting-started.html
 
 
 ⚠️ Known Issues
