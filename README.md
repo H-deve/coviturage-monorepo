@@ -60,6 +60,13 @@ You need to execute these entity files to create the database tables.
 
 If using TypeORM (with NestJS), you can run migrations or enable automatic synchronization.
 
+### JWT Configuration
+
+- `JWT_ACCESS_SECRET`: Secret key for signing access tokens
+- `JWT_REFRESH_SECRET`: Secret key for signing refresh tokens
+- `JWT_ACCESS_EXPIRATION`: Access token lifetime (e.g., 15m)
+- `JWT_REFRESH_EXPIRATION`: Refresh token lifetime (e.g., 7d)
+
 ### 4️⃣ Documentation with Compodoc
 npx compodoc -p tsconfig.json -s
 This generates the frontend documentation and serves it locally.
