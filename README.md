@@ -89,7 +89,11 @@ JWT Configuration
 
 📚 Documentation (Compodoc)
 
-Generate frontend documentation:
+Generate NestJs documentation
+cd backend
+npm npx compodoc -p tsconfig.json -s
+
+Generate Angular documentation:
 
 cd frontend
 npx compodoc -p tsconfig.json -s
