@@ -66,14 +66,13 @@ carpoolin/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/carpoolin.git
-cd carpoolin
+https://github.com/H-deve/Ride-Sharing-Platform.git
+cd Ride-Sharing-Platform
 ```
 2️⃣ Backend Setup (NestJS)
-bash
-
+```bash
 cd backend
-
+```
 # Install dependencies
 npm install
 
@@ -87,6 +86,7 @@ cp .env.example .env
 npm run start:dev
 
 Backend runs at: http://localhost:3000
+
 3️⃣ Database Setup
 Option A: Manual SQL (Quick Start)
 sql
