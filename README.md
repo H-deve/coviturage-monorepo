@@ -11,7 +11,6 @@
 > **Connect. Share. Ride.**  
 > A modern carpooling (ride-sharing) platform built for learning purposes.
 
----
 
 ## 📖 Overview
 
@@ -31,7 +30,6 @@ Users can:
 - **Code Quality:** SonarQube
 - **CI/CD:** Included
 
----
 
 ## 🗂 Project Structure
 
@@ -43,7 +41,6 @@ carpoolin/
 
 Each folder contains its own minimal README if needed.
 
----
 
 ## 📦 Installation Instructions
 
@@ -52,13 +49,14 @@ Each folder contains its own minimal README if needed.
 
 ### 1️⃣ Backend (NestJS)
 
-```bash
+
 cd backend
 npm install
 npm run start:dev
 
 Backend runs at: http://localhost:3000
-2️⃣ Frontend (Angular)
+
+### 2️⃣ Frontend (Angular)
 
 cd frontend
 npm install
@@ -150,7 +148,7 @@ Architecture diagram: (Insert image here)
 This project is licensed under the MIT License.
 
 
----
+
 
 This **single-page README** includes everything your repo needs:
 
@@ -164,7 +162,7 @@ This **single-page README** includes everything your repo needs:
 - Optional demo & architecture section  
 - License  
 
----
+
 
 If you want, I can also **generate `.env.example` and include instructions directly at the top**, so users can run the project immediately after cloning.  
 
