@@ -178,7 +178,7 @@ Secrets (tokens, passwords) are not included in the repository. Configure them a
 
 ### 📚 Documentation
 Generate API Documentation (NestJS)
-bash
+```bash
 
 cd backend
 npm run compodoc
@@ -212,7 +212,7 @@ npm run e2e           # Run Protractor E2E tests
 
 ### 👥 User Workflows
 🚗 Driver Experience
-
+```text
     Register/Login as driver
 
     Create Trip - Set route, date/time, seats, price
@@ -220,8 +220,8 @@ npm run e2e           # Run Protractor E2E tests
     Manage Bookings - Accept/reject passenger requests
 
     Trip Management - Start, complete, or cancel trips
-
-
+```
+```text
 👤 Passenger Experience
 
     Register/Login as passenger
@@ -230,13 +230,13 @@ npm run e2e           # Run Protractor E2E tests
 
     Book Seats - Reserve seats on available trips
 
-
+```
 🐛 Known Issues & Limitations
 
     ⚠️ Educational Project Notice: This is primarily a learning project with certain limitations.
 
 Current Limitations
-
+text
     Database setup requires manual SQL or migrations
 
     Limited error handling in some backend endpoints
@@ -251,23 +251,6 @@ Current Limitations
 
     Testing coverage needs improvement in some modules
 
-🔗 Useful Resources
-
-    NestJS Documentation
-
-    Angular Documentation
-
-    MySQL Documentation
-
-    Capacitor Documentation
-
-    TypeORM Guide
-
-    GitLab CI/CD Docs
-
-    SonarQube Documentation
-
-    JWT Best Practices
 
 Happy Coding! 🚗💨
 
